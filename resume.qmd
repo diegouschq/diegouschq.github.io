@@ -25,7 +25,7 @@ December 2026, with a minor in Data Science.
 Financial analysis, operational reporting, and business intelligence
 tools including Power BI, Excel, SQL, and R.
 
-### Research interests
+### Specialization and Research interests
 
 Treasury operations, financial systems, forecasting, dashboard
 development, and enterprise analytics.

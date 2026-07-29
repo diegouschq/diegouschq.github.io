@@ -1,0 +1,259 @@
+---
+title: "Long-Term Pricing Behavior & Management Strategy in Rexburg Student Housing"
+author: "Diego Chuquimia"
+date: "2025-11-28"
+format: 
+  html: 
+    code-fold: true
+execute:
+  error: true
+  warning: false
+  message: false
+project:
+  type: website
+  output-dir: docs
+---
+```{r}
+library(readr)
+library(tidyverse)
+library(pander)
+library(DT)
+library(mosaic)
+library(dplyr)
+library(ggplot2)
+
+pricemanagement<-read_csv("pricemanagement.csv")
+```
+
+##  Background
+
+Student housing prices in Rexburg, Idaho have been increasing through the years. This study will determine if the increase in prices is not connected to the decision of housing management or other external factors.
+
+![](logo.png){weidth="50%"}
+
+##  Data Collection
+
+This data set contains observations regarding the prices over years for different complex apartments. Here are some of the important changes made in this data set:
+
+* The prices are rounded by using the means of each apartment. They are also converted to whole numbers since the difference is not significant. 
+
+* We filter the data with the semester of Winter and Spring since this semester are the ones that are vary with respect the prices. 
+
+* The managements are also part of the data with their respective apartment id.
+
+::: panel-tabset
+
+### Hide Data 
+
+### Show Data
+```{r}
+datatable(pricemanagement)
+```
+:::
+
+##  Purpose of the Research
+
+This study, therefore, aims to investigate the direct relationship between a student's housing price and the variety of prices respect managing. The main question to answer in this research is: **Do different management companies change prices over the years in different ways?**
+
+This experiment is applying the following two statistical test:
+
+* **Two Way Anova :** Examine whether contract prices differ across management companies.
+
+* **Multiple Linear Regression (Two-lines):** Identify what firms are varying the price and have significant variance based on years and managerial. 
+
+::: panel-tabset
+
+### Two way-Anova
+
+#### Hypothesis
+
+1.  Does price change over time, regardless of management firm?
+$$
+  H_0: \text{ There is no overall effect of year on contract price.} \\
+  H_a: \text{ Year has a significant effect on contract price.} 
+$$
+
+2.  Do management firms charge different average prices?
+$$
+  H_0: \text{All management companies have the same mean price.}\\
+  H_a: \text{At least one management company has a different mean price.}
+$$
+
+3.  Do some management companies increase prices faster or slower than others over time?
+$$
+  H_0: \text{The effect of year is the same for all management companies.}\\
+  H_a: \text{At least one company has a different yearly trend.}
+$$
+
+The significance level for this study will be set at:
+$$
+  α=0.05
+$$
+
+
+####  Analysis with Two-way Anova
+
+To perform the analysis we compute the following Two-way ANOVA.
+
+```{r}
+pm.aov <- aov(Mean_Contract_Price ~ Year + Management_Name+Year:Management_Name, data=pricemanagement)
+pander(summary(pm.aov))
+```
+
+####  Diagnostic Plots
+
+The Two-Way ANOVA test is considered valid, despite a minor deviation from its perfect assumptions. The diagnostic plots indicate that the assumptions of multiple linear regression are reasonably met. The residuals vs fitted plot shows no strong curvature or heteroscedasticity, suggesting that the linear modeling approach is appropriate. The Q–Q plot shows only mild tail deviations, indicating that residuals are approximately normally distributed. Together, these results support the validity of the regression model for analyzing contract price trends across management firms and years.
+```{r}
+par(mfrow=c(1,2))
+plot(pm.aov, which=1:2, pch=16)
+```
+
+#### Statistical Analysis
+
+1.  Main effect of year
+$$
+F(1, 838) = 19.74\\
+p = 1.007e-05 (< .001) → \text{significant}
+$$
+
+Interpretation: Average contract prices do change over time across the entire market.
+
+
+2.  Effect of Management Company
+$$
+F(10, 838) = 33.36\\
+p = 9.19e-55→ \text{significant}
+$$
+
+Interpretation: Management companies have different pricing levels, meaning the firm in charge matters for how much residents pay.
+
+3.  Interaction effect 
+$$
+F(10, 838) = 0.8774\\
+p = 0.5541 → \text{not significant}
+$$
+
+Interpretation: Management companies do not differ in how their prices change over time. All firms show similar year-to-year pricing trends.
+
+####  Conclusion
+
+Contract prices vary significantly across years and across management companies, but the pattern of price increase over time is consistent across all firms. Year affects prices, and firms differ in their average pricing levels, but no firm increases prices faster or slower than others.
+
+
+###  Multiple Linear Regression
+
+####  Hypothesis
+
+This analysis attempts to model the accumulation of price rent through the years in student's housing management. Specifically,
+$$
+\underbrace{Y_i}_{\text{Price of Rent}} =
+\overbrace{\beta_0}^{\text{Intercept}} +
+\overbrace{\beta_1}^{\substack{\text{Years}}}
+\underbrace{X_{1i}}_{\text{Management}} +
+{\beta_2}{X_{2i}} + {\beta_3}{X_{3i}}+{\beta_4}{X_{4i}}+{\beta_5}{X_{5i}}+...+{\beta_11}{X_{11i}}+\epsilon_i
+$$
+
+The hypotheses test is:
+
+$$
+  H_0: \beta_1 = 0\\
+  H_0: \beta_1 \neq 0\\
+  α=0.05
+$$
+
+H₀: Price changes over Year are the same for all management companies.
+H₁: At least one management company shows a different pattern of price change over Year.
+
+####  Graphical and Statistical Analysis
+
+:::::: panel-tabset
+
+#####  Diagnostic Plots
+
+* Residuals vs Fitted: The points are roughly centered around 0 without a clear pattern. There is no strong curve or funnel shape, which indicates that the linearity assumption is appropriate and the variance of the residuals is fairly constant (Acceptable).
+* Normal Q-Q plots: This plot compares the distribution of the residuals to a normal distribution. Most of the points fall within the confidence bands, with only mild deviations in the tails. This indicates that the residuals are approximately normal and acceptable for linear regression (Acceptable).
+* Residuals vs Order: This plot checks whether residuals change over time or follow a trend. The points appear randomly scattered with no visible pattern or direction. This means the residuals are independent and do not show time-based correlation or clustering (Acceptable).
+```{r}
+
+pm.lm <- lm(Mean_Contract_Price ~ Year + Management_Name+Year:Management_Name, data=pricemanagement)
+
+par(mfrow=c(1,3))
+plot(pm.lm, which=1)
+qqPlot(pm.lm$residuals, id=FALSE)
+plot(pm.lm$residuals, main="Residuals vs Order")
+
+```
+
+##### Graph
+
+The below graph shows how prices and years vary depeending of the company:
+```{r}
+pm.lm <- lm(Mean_Contract_Price ~ Year + Management_Name+Year:Management_Name, data=pricemanagement)
+# Y vakues
+pricemanagement$pred <- predict(pm.lm)
+
+# Plots
+ggplot(pricemanagement, aes(x = Management_Name, y = Mean_Contract_Price, color = factor(Year))) +
+  geom_point(size=0.8, alpha=.6) +
+  
+# MLR Lines
+  geom_line(aes(y = pred, group = Year), size = 0.8) +
+# Title
+  labs(title = "Regression Lines by Year and Management Firm", x = "Management Company", y = "Mean Contract Price", color = "Year") +
+# Background
+  theme_minimal(base_size = 13) +
+# X values correction 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  
+```
+The year 2025 is showing the highest contract prices among most managerial apartments. The data from most companies reveals a consistent pattern of yearly price increases. Over the four-year period, we can observe that most contract prices are relatively close to each other.However, Hemming and Triton Investments appear to have a greater annual price increase compared to the others. The primary explanation for the continuous yearly price increase across all companies might be caused by economic inflation. 
+
+
+To perform the analysis we compute the following Multiple regression: 
+
+```{r}
+# Multiple regression
+pm.lm <- lm(Mean_Contract_Price ~ Year * Management_Name, data = pricemanagement)
+# prediction
+pricemanagement$pred <- predict(pm.lm)
+# plot
+ggplot(pricemanagement, aes(x = Year, color = Management_Name)) +
+# dots
+  geom_point(aes(y = Mean_Contract_Price), alpha = 0.5, size = 0.5) +
+# lines
+  geom_line(aes(y = pred, group = Management_Name),size = 1) +
+# titles
+  labs(title = "Multiple Linear Regression Trends by Management Firm", x = "Year", y = "Contract Price", color = "Management Companies") +
+# thematic template
+  theme_minimal()
+```
+
+
+The regression analysis shows that each student-housing management company follows its own pricing pattern over time. Some companies steadily increase their contract prices, while others stay more stable or even decrease slightly. This means the student-housing market is not the same across all firms—each company sets prices differently based on its own strategy, demand, and operations. Overall, the data suggests that students may face different price trends depending on which company manages their housing.
+
+
+##### Statistical analysis
+
+The estimated slope of this regression is 50525, which is significantly different from zero _(p=05.966e-15)_. Follows is a complete table showing the summary of the full regression results.
+
+```{r}
+pm.lm <- lm(Mean_Contract_Price ~ Year + Management_Name+Year:Management_Name, data=pricemanagement)
+pander(summary(pm.lm)$coefficients)
+```
+
+Regression results indicate that the majority of management companies do not significantly differ from the baseline firm in either their average pricing levels or their year-over-year pricing trends. The only firm showing a statistically distinct pattern is Triton Investments. Triton charges significantly lower average contract prices (p = 0.044) but exhibits a significantly higher annual rate of price increase (p = 0.004) relative to the baseline firm. This suggests a catch-up strategy or accelerated price adjustments unique to this company.
+:::::: 
+
+:::
+
+####  Conclusion
+
+The regression analysis shows that most firms **are no statistically significant** evidence that the majority of companies differ either in their average pricing levels or in their rate of yearly price increases. However, in the case of Triton Investments, there  **is statistically significant** evidence that it might not follow the yearly price increase.
+
+Most management companies increase rent at the same speed, and their prices are not statistically different from each other. Only one company — Triton Investments — stands out. They start off cheaper, but their prices go up faster every year than anyone else. So, in general, managers are not causing big differences in price trends, but Triton is an exception.
+
+We can see that Triton Investments has more related evidence to grow a 136.7$ per year faster than other managements. 
+
+
+[^1]: Note that this data was collected from BYU-I Housing by Professor Garret Saunders.
+

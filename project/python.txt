@@ -1,0 +1,4 @@
+
+### [Python Projects](Projects/Python/student_housing_recommender.qmd)
+
+Projects using Python, pandas, NumPy, and data analysis workflows.

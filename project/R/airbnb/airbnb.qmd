@@ -1,0 +1,776 @@
+---
+title: "Analyzing San Diego Airbnb Prices and Profits"
+author: "Diego Chuquimia"
+date: "2026-05-95"
+format:
+  html:
+    code-fold: true
+    code-line-numbers: true
+    df-print: paged
+    toc: true          # Enables the outline menu
+    toc-depth: 6       # Captures headers all the way down to ######
+execute:
+  error: true
+  warning: false
+  message: false
+project:
+  type: website
+  output-dir: docs
+---
+
+## Is Owning an Airbnb in San Diego a good investment?
+
+::: {style="text-align: center;"}
+![](logo.png){width="85%"}
+:::
+
+### Background
+
+Airbnb provides comprehensive datasets that allow us to analyze the market landscape in San Diego, California. We will leverage one of these datasets to determine whether investing in an Airbnb property represents a viable and lucrative business opportunity. To evaluate this, our analysis will focus on three core business questions:
+
+-   What is the average annualized revenue by property type?
+-   Which submarkets and regions yield the highest financial returns?
+-   How do guest reviews and ratings correlate with listing income?
+
+To contextualize our findings, it is helpful to first define the primary room types available on the platform:
+
+-   **Entire Home/Apartment:** Guests have the whole place to themselves. This typically includes a private entrance, bedroom, bathroom, and kitchen, with no shared living spaces or host present during the stay.
+
+-   **Private Room:** Guests have their own private bedroom to sleep in, but other areas of the property (such as the kitchen, living room, or bathroom) are shared with the host or other guests.
+
+-   **Shared Room:** Guests sleep in a space that is shared with others. This could mean sharing a bedroom with multiple beds (like a hostel style setup) or sleeping in a common area like a living room futon or sectioned-off space.
+
+### Room Type - Influence in the market
+
+When entering a short-term rental market, one of the first and most critical decisions is choosing the right property type. Does a higher volume of cheaper private rooms outperform a few high-value entire homes? Below, we explore the relationship between room types, their price distributions, and their ultimate earning potential in San Diego.
+
+::: panel-tabset
+#### Show table
+
+```{r}
+library(tidyverse)
+library(jsonlite)
+library(knitr)  #simple table
+library(kableExtra)
+
+airbnb<-read_csv("listings.csv")
+
+#REVENUE (ROOM TYPE)
+revenue<-airbnb %>% 
+  mutate(price=as.numeric(str_remove_all(price, "[\\$,]"))) %>% 
+  filter(!is.na(price), price<=5000, room_type!="Hotel room", !is.na(availability_365))%>% 
+  group_by(room_type) %>% 
+  summarize(number_of_proper = n(), avg_price= round(mean(price),2), risk_price= round(sd(price),2), year_occupancy=365-mean(availability_365), perc_occupancy= round(year_occupancy/365*100,2),proj_revenue= avg_price*year_occupancy, .groups = "drop") %>%   
+  transmute("Category"=room_type,"Properties"=number_of_proper, " Service Occupancy"= round(year_occupancy,0),"Rate Occupancy by Year"=perc_occupancy,"Price (AVG)"=avg_price, "Price Variance"=risk_price, "Total Revenue"=round(proj_revenue,2))
+
+my_styled_title <- "<span style='color: #000080; font-size: 18px; font-weight: bold;'>Summary Analysis by Room Type</span>"
+
+kable(revenue, caption = my_styled_title, source = "Table1") %>%  
+  kable_styling(bootstrap_options = "bordered") %>% 
+  row_spec(row=0, bold = TRUE)
+
+```
+
+#### Hide table
+:::
+
+Each room type has an important participation in San Diego California, here is the analysis:
+
+::::: columns
+::: {.column style="vertical-align: middle;" width="47%"}
+```{r}
+#| label: fig-chart1
+library(tidyverse)
+library(jsonlite)
+library(scales)
+
+library(sf) #points in data
+library(tigris) #boundaries in map
+
+library(DT) #better tables
+library(htmltools) #custom dt table
+library(knitr) #simple table
+library(kableExtra)
+
+airbnb<-read_csv("listings.csv")
+#count prices
+aprice<-airbnb %>% 
+  mutate(price=as.numeric(str_remove_all(price, "[\\$,]"))) %>%  
+  filter(!is.na(price), room_type!="Hotel room",price<=5000)%>% 
+  group_by(room_type,price) %>% 
+  summarise(count=n(), .groups = "drop") %>% 
+  select(room_type, price, count) 
+
+#donut chart
+count_room<-airbnb %>%
+  mutate(price=as.numeric(str_remove_all(price, "[\\$,]"))) %>% 
+  filter(!is.na(price), price<=5000, room_type!="Hotel room", !is.na(availability_365),!is.na(estimated_revenue_l365d))%>% 
+  group_by(room_type) %>% 
+  summarize(number_of_proper = n(), margin_of_market=round(n()/11220*100,2), .groups = "drop") %>% 
+  transmute("Category"=room_type,"Properties"=number_of_proper, "Market Occupancy"= margin_of_market)
+ 
+#REVENUE (ROOM TYPE)
+revenue<-airbnb %>% 
+  mutate(price=as.numeric(str_remove_all(price, "[\\$,]"))) %>% 
+  filter(!is.na(price), price<=5000, room_type!="Hotel room", !is.na(availability_365))%>% 
+  group_by(room_type) %>% 
+  summarize(number_of_proper = n(), avg_price= round(mean(price),2), risk_price= round(sd(price),2), year_occupancy=365-mean(availability_365), perc_occupancy= round(year_occupancy/365*100,2),proj_revenue= avg_price*year_occupancy, .groups = "drop") %>%   
+  transmute("Category"=room_type,"Properties"=number_of_proper, " Service Occupancy"= round(year_occupancy,0),"Year Occupancy (%)"=perc_occupancy,"Price (AVG)"=avg_price, "Price Variance"=risk_price, "Total Revenue"=round(proj_revenue,2))
+
+infoprice<-revenue %>% 
+  select("Category", `Price (AVG)`, `Price Variance`, `Total Revenue`)
+
+
+
+# DONUT - MARKET OCCUPANCY
+
+hsize<-4
+count_room<-count_room %>% 
+  mutate(x=hsize)
+
+ggplot(count_room, aes(x = hsize, y = `Market Occupancy`, fill = Category)) +
+  geom_col(color = "black") +
+  geom_text(
+    aes(x = hsize + 1.5,# Pushes the text outward the donut ring
+      label=paste0(`Market Occupancy`,"%")# Adds the % symbol to the values
+    ),position = position_stack(vjust = 0.5),#Centers the text of each slice
+    size = 3.5,       # Adjust text size
+    color = "black") +           # Text color
+  coord_polar(theta = "y") +
+  scale_x_continuous(limits = c(0.2, hsize + 1.5))+
+  scale_fill_manual(values = c("#0570B0", "#74A9CF", "#D0D1E6")) +
+  labs(title="Market Share", subtitle="The biggest property counts comes from\n renting an Entire Home/Apartment", x=NULL, y=NULL)+
+  theme_void()+
+  theme(plot.title = element_text(color = "#000080", face="bold", size=14),
+        plot.margin = margin(t = 10, r = 10, b = 10, l = 10, unit = "pt"), #margin - space around in and out graph
+        plot.background = element_rect(fill = "white", 
+      color = "black",   # border around graph
+      linewidth = 1        # thickness of the border line
+    ))
+```
+:::
+
+::: {.column style="vertical-align: middle; padding-left: 5%;" width="48%"}
+There is a **high supply** in properties that are Entire apartments and Private rooms. The lowest one comes from the shared rooms. However, they also have **the greatest occupancy** in the market without having many properties compared to the others. Almost half of the year is reserved on shared rooms by the average customer.
+:::
+:::::
+
+All prices are calculated on a per-night basis. The following graph and table illustrates the frequency of specific price points across different property types:
+
+```{r}
+#| label: fig-chart2
+
+#price count graph
+  
+ggplot(data=aprice, aes(x=price, y=count))+
+  geom_point(alpha=0.8, color="#000080")+
+  facet_wrap(~room_type, ncol = , scales = "free")+
+  labs(title="Price Volume Distribution by Room type", subtitle="Excluding all variables above $5,000 in price",x="Price ($)", y="Count")+
+  theme_bw()+
+  theme(plot.title = element_text(color = "#000080", face="bold", size=14), axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1, size = 8))
+
+```
+
+The Airbnb prices reveal a strong right-skewed distribution across all three room types, indicating that a majority of listings are concentrated at the lower end of the price spectrum. This suggests that **hosts prioritize keeping their properties affordable and accessible** to maximize demand and overall profitability.
+
+::::: columns
+::: {.column width="45%" style="vertical-align: middle; padding-right: 5%;"}
+```{r}
+
+infoprice<-revenue %>% 
+  select("Category", `Price (AVG)`, `Price Variance`)
+
+my_styled_title <- "<span style='color: #000080; font-size: 14px; font-weight: bold;'>Price Analysis by Room Type</span>"
+
+kable(infoprice, caption = my_styled_title) %>%  
+  kable_styling(bootstrap_options = "bordered") %>% 
+  row_spec(row=0, bold = TRUE)
+```
+:::
+
+::: {.column style="vertical-align: middle;" width="50%"}
+```{r}
+#| label: fig-chart3
+
+#BOX PLOT - VARIANCE
+
+ggplot(aprice, aes(x=room_type, y=price,fill=room_type))+
+  geom_boxplot()+
+  labs(title="Distribution of Price by Room Type", x=NULL, y="Price ($)", subtitle = "Share room is the most consistent price in the market", fill="Properties")+
+  scale_fill_manual(values = c("#0570B0", "#74A9CF", "#D0D5E6"))+
+  theme_bw()+
+  theme(
+    plot.title = element_text(color = "#000080", face="bold", size=14)
+  )
+
+```
+:::
+:::::
+
+Looking thought the average price data between room types, we can see that there is a clear pricing hierarchy across property types, with entire homes commanding the highest rates, followed by private and shared rooms. Analysis of the average price data reveals a distinct pricing hierarchy across property types, following the pattern: Shared Room \< Private Room \< Entire Apartment/Home. Each tier roughly doubles in price **(a +200% increase)** compared to the previous one.
+
+While this data highlights clear revenue potential, price distributions in the entire home/apartment and private room categories show wide variations. Constant market fluctuations make these higher-tier **properties riskier to invest in.** In contrast, shared rooms exhibit the most stable pricing within their category, offering **a lower-risk profile.**
+
+::::: columns
+::: {.column width="50%" style="vertical-align: middle;"}
+```{r}
+#| label: fig-chart4
+#bar side revenue
+ggplot(data=revenue, aes(y=Category, x=`Total Revenue`))+
+  geom_col(width=0.7, fill="#0570B0")+
+  geom_text(aes(label=scales::dollar(`Total Revenue`)), hjust=1.2, size=3.5, color="white")+
+  labs(title="Revenue in the Airbnb Market", subtitle="Renters with an Entire Apartment get the most revenue", y=NULL, x=NULL)+
+  theme_bw()+
+  theme(plot.title = element_text(color = "#000080", face="bold", size=14),
+        axis.text.x=element_blank(), #delet x axis values
+        axis.ticks.x = element_blank(), #delet x axis pointing vertical lines
+        panel.grid.major.x = element_blank(), #delt vertical lines inside
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank()) #delt vertical lines inside
+
+
+```
+:::
+
+::: {.column width="50%" style="vertical-align: middle; padding-left: 5%;"}
+**Entire apartments generate the highest average revenue** for investors in the San Diego, CA Airbnb market, while shared rooms yield the lowest returns. Hosts can identify excellent investment opportunities that align directly with their personal goals.
+:::
+:::::
+
+Looking through all these facts, there are two ways to make a good investment:
+
+-   **To earn a great revenue**, the best investment would be to rent an entire apartment or Private room (Figure 4). These ones also come with higher market risk.
+
+-   **To make some extra money**, you could rent out only a portion of your property. Since the demand for shared rooms is higher, there is greater stability and predictability in receiving income (Table 1).
+
+### City Market - Demographic Trend
+
+Several Neighborhoods around San Diego, California, have different kinds of amenities, location advantage, and deals. what make each different is their success with their respect market.
+
+::: panel-tabset
+#### Graphical Interpretation
+
+Below, there is a graphic of the whole data set in neighborhoods:
+
+###### **All the airbnb Activity by San Diego Neighborhood**
+
+::::: columns
+::: {.column style="vertical-align: middle;" width="50%"}
+```{r}
+#| fig-height: 10
+#| fig-width: 8
+#| warning: false
+#| message: false
+library(sf) #points in data
+library(tigris) #boundaries in map
+library(DT) #better tables
+library(htmltools) #adding more custom to the table (title)
+
+market<-airbnb %>% 
+  mutate(price=as.numeric(str_remove_all(price, "[\\$,]")), host_acceptance_rate=as.numeric(str_remove_all(host_acceptance_rate, "[\\%]"))) %>%
+  filter(!is.na(price), room_type!="Hotel room",price<=5000, !is.na(neighbourhood_cleansed), !is.na(host_acceptance_rate))%>%
+  group_by(neighbourhood_cleansed) %>%
+  summarise(number_of_proper= n(), acceptance_rate = round(mean(host_acceptance_rate), 2), avg_price = round(mean(price),2), year_occupancy = round(365- mean(availability_365), 0), avg_year_revenue=round(avg_price*year_occupancy, 2),latitude = median(latitude), longitude = median(longitude), .groups = "drop") %>%
+  select(neighbourhood_cleansed, number_of_proper, avg_price, year_occupancy, avg_year_revenue, acceptance_rate, latitude, longitude)
+
+
+options(tigris_use_cache = TRUE) # Bonus: caches the data so it doesn't redownload every time
+options(tigris_progress_bar = FALSE)
+
+#making coordinates by mixing together long and lat
+market_sf<-market %>% 
+  st_as_sf(coords=c("longitude", "latitude"),crs=4326)
+
+#getting map of San Diego
+ca_places<-places(state="CA", year=2025, cb=TRUE, class="sf") #only ca
+
+san_diego_boundary <- ca_places %>% #only San Diego
+  filter(NAME %in% c("San Diego", "El Cajon", "Imperial Beach", "La Mesa", "Lemon Grove", "National City", "Santeem" ,"Chula Vista","Coronado"))
+
+#CREATING MAP
+
+ggplot()+
+
+  geom_sf(data=san_diego_boundary,fill="gray95", color="black", linewidth=0.5) + #sandiego bounduries
+  
+  geom_sf(data=market_sf, aes(size=number_of_proper, color=avg_year_revenue), alpha=0.75)+
+
+  geom_sf_text(data = san_diego_boundary, aes(label = NAME), size = 3, color = "gray30", fontface = "italic", check_overlap = TRUE) +
+  
+  scale_size_continuous(name="Number of Properties", range=c(2,14), breaks=c(100, 500, 1000))+
+  
+  scale_color_gradient(name="Annual revenue", low = "#D1DFF6",high = "#0570B0", labels=label_dollar())+
+  
+  coord_sf(datum=NA)+
+  
+  labs(x = NULL, y = "Ocean", caption = "Figure 3")+
+  
+  theme_minimal()+
+  theme(plot.background = element_rect(fill = "white", color = "black",   # border around graph
+      linewidth = 1        # thickness of the border line
+    ))
+
+```
+:::
+
+::: {.column style="vertical-align: middle; padding-left: 5%;" width="45%"}
+These are neighborhoods experiencing strategic growth in listing volume and revenue. At first glance, the largest concentration of properties is around the beach (left side). Secondly, close to the beach. This shows that landlords want to focus more on properties near the city center or in the middle of the city. As properties move further from the coast, the fewer properties. Finally, in order to get the best revenue per year, it is not required to be located in place strategically with many properties. Most properties with a great revenue are not in neighborhoods with many properties.
+:::
+:::::
+
+###### **Entire Apartments room in San Diego Neighborhood**
+
+::::: {#layout-container .columns}
+::: {.column width="50%" style="vertical-align: middle;"}
+```{r}
+#filter Entire market
+library(plotly)
+library(leaflet)
+
+eamarket<-airbnb %>% 
+  mutate(price=as.numeric(str_remove_all(price, "[\\$,]")), host_acceptance_rate=as.numeric(str_remove_all(host_acceptance_rate, "[\\%]"))) %>%
+  filter(!is.na(price), room_type=="Entire home/apt",price<=5000, !is.na(neighbourhood_cleansed), !is.na(host_acceptance_rate))%>%
+  group_by(neighbourhood_cleansed) %>%
+  summarise(number_of_proper= n(), acceptance_rate = round(mean(host_acceptance_rate), 2), avg_price = round(mean(price),2), year_occupancy = round(365- mean(availability_365), 0), avg_year_revenue=round(avg_price*year_occupancy, 2),latitude = median(latitude), longitude = median(longitude), .groups = "drop") %>%
+  select(neighbourhood_cleansed, number_of_proper, avg_price, year_occupancy, avg_year_revenue, acceptance_rate, latitude, longitude)
+
+
+# Bonus: caches the data so it doesn't redownload every time
+options(tigris_use_cache = TRUE) 
+options(tigris_progress_bar = FALSE)
+
+#making coordinates by mixing together long and lat
+eamarket_sf<-eamarket %>% 
+  st_as_sf(coords=c("longitude", "latitude"),crs=4326)
+
+#adding tool data
+eamarket_plot<-eamarket_sf %>%
+  mutate(tooltip_text=paste0(
+    "<b>Neighborhood:</b> ", neighbourhood_cleansed, "<br>",
+    "<b>Properties:</b> ", number_of_proper, "<br>",
+    "<b>Revenue:</b> ", dollar(avg_year_revenue)))
+
+#getting map of San Diego
+ca_places<-places(state="CA", year=2025, cb=TRUE, class="sf") #only ca
+
+san_diego_boundary <- ca_places %>% #only San Diego
+  filter(NAME %in% c("San Diego", "El Cajon", "Imperial Beach", "La Mesa", "Lemon Grove", "National City", "Santeem" ,"Chula Vista","Coronado"))
+
+# 1. Create the expanded custom text box containing all three metrics
+eamarket_sf <- eamarket_sf %>%
+  mutate(popup_text = paste0(
+    "<b>Neighborhood:</b> ", neighbourhood_cleansed, "<br>",
+    "<b>Total Properties:</b> ", number_of_proper, "<br>",
+    "<b>Annual Revenue:</b> ", dollar(avg_year_revenue)
+  ))
+
+# 2. Build the color palette function (high = deep blue, low = light gray)
+rev_pal <- colorNumeric(
+  palette = c(low = "#D1DFF6",high = "#0570B0"),
+  domain = eamarket_sf$avg_year_revenue
+)
+
+# 3. Render the interactive map
+leaflet(width = "100%", height = 500) %>%
+  addProviderTiles(providers$CartoDB.Positron) %>%
+  # Clean, minimal gray background map
+  addProviderTiles(providers$CartoDB.Positron) %>% 
+  
+  # Base San Diego boundaries
+  addPolygons(
+    data = san_diego_boundary,
+    fillColor = "#E0E0E0",
+    color = "black",
+    weight = 0.3,
+    opacity = 0.2,
+    fillOpacity = 0.5
+  ) %>%
+  
+  # Airbnb dots with a fixed, uniform small size
+  addCircleMarkers(
+    data = eamarket_sf,
+    radius = 2,                         # Fixed small radius for all dots
+    color = ~rev_pal(avg_year_revenue), # Gradient based strictly on revenue
+    fillColor = ~rev_pal(avg_year_revenue),
+    fillOpacity = 0.9,
+    stroke = TRUE,
+    weight = 1,                         # Thin border around the dots
+    popup = ~popup_text,                # Complete metrics box shown on click
+    label = ~neighbourhood_cleansed     # Simple neighborhood name hover tooltip
+  ) %>%
+  
+  # Revenue Legend
+  addLegend(
+    pal = rev_pal, 
+    values = eamarket_sf$avg_year_revenue, 
+    title = "Annual Revenue",
+    position = "topright",
+    labFormat = labelFormat(prefix = "$")
+  )
+```
+:::
+
+::: {.column style="vertical-align: middle; padding-left: 5%;" width="45%"}
+Entire apartments are located in large part around the San Diego, CA market. The market for entire apartments exhibits strong spatial inequality. Revenue generation is centered around San Diego, with the most success in the coastal area. In contrast, the center of the city does not account for the most profitable areas, yielding an average revenue of \$30k–\$45k. The best recommendation for investors is to note that **most neighborhoods with a high supply of apartments show lower revenue.** The best investments in entire apartments are located where there is a low supply of properties.
+:::
+:::::
+
+###### **Private rooms in San Diego Neighborhood**
+
+::::: {#layout-container .columns}
+::: {.column width="50%" style="vertical-align: middle;"}
+```{r}
+#filter Entire market
+library(plotly)
+library(leaflet)
+
+prmarket<-airbnb %>% 
+  mutate(price=as.numeric(str_remove_all(price, "[\\$,]")), host_acceptance_rate=as.numeric(str_remove_all(host_acceptance_rate, "[\\%]"))) %>%
+  filter(!is.na(price), room_type=="Private room",price<=5000, !is.na(neighbourhood_cleansed), !is.na(host_acceptance_rate))%>%
+  group_by(neighbourhood_cleansed) %>%
+  summarise(number_of_proper= n(), acceptance_rate = round(mean(host_acceptance_rate), 2), avg_price = round(mean(price),2), year_occupancy = round(365- mean(availability_365), 0), avg_year_revenue=round(avg_price*year_occupancy, 2),latitude = median(latitude), longitude = median(longitude), .groups = "drop") %>%
+  select(neighbourhood_cleansed, number_of_proper, avg_price, year_occupancy, avg_year_revenue, acceptance_rate, latitude, longitude)
+
+
+# Bonus: caches the data so it doesn't redownload every time
+options(tigris_use_cache = TRUE) 
+options(tigris_progress_bar = FALSE)
+
+#making coordinates by mixing together long and lat
+prmarket_sf<-prmarket %>% 
+  st_as_sf(coords=c("longitude", "latitude"),crs=4326)
+
+#adding tool data
+eamarket_plot<-prmarket_sf %>%
+  mutate(tooltip_text=paste0(
+    "<b>Neighborhood:</b> ", neighbourhood_cleansed, "<br>",
+    "<b>Properties:</b> ", number_of_proper, "<br>",
+    "<b>Revenue:</b> ", dollar(avg_year_revenue)))
+
+#getting map of San Diego
+ca_places<-places(state="CA", year=2025, cb=TRUE, class="sf") #only ca
+
+san_diego_boundary <- ca_places %>% #only San Diego
+  filter(NAME %in% c("San Diego", "El Cajon", "Imperial Beach", "La Mesa", "Lemon Grove", "National City", "Santeem" ,"Chula Vista","Coronado"))
+
+# 1. Create the expanded custom text box containing all three metrics
+prmarket_sf <- prmarket_sf %>%
+  mutate(popup_text = paste0(
+    "<b>Neighborhood:</b> ", neighbourhood_cleansed, "<br>",
+    "<b>Total Properties:</b> ", number_of_proper, "<br>",
+    "<b>Annual Revenue:</b> ", dollar(avg_year_revenue)
+  ))
+
+# 2. Build the color palette function (high = deep blue, low = light gray)
+rev_pal <- colorNumeric(
+  palette = c(low = "#9ECAE1",high = "#0570B0"),
+  domain = prmarket_sf$avg_year_revenue
+)
+
+# 3. Render the interactive map
+leaflet(width = "100%", height = 500) %>%
+  addProviderTiles(providers$CartoDB.Positron) %>%
+  # Clean, minimal gray background map
+  addProviderTiles(providers$CartoDB.Positron) %>% 
+  
+  # Base San Diego boundaries
+  addPolygons(
+    data = san_diego_boundary,
+    fillColor = "#E0E0E0",
+    color = "black",
+    weight = 0.3,
+    opacity = 0.2,
+    fillOpacity = 0.5
+  ) %>%
+  
+  # Airbnb dots with a fixed, uniform small size
+  addCircleMarkers(
+    data = prmarket_sf,
+    radius = 2,                         # Fixed small radius for all dots
+    color = ~rev_pal(avg_year_revenue), # Gradient based strictly on revenue
+    fillColor = ~rev_pal(avg_year_revenue),
+    fillOpacity = 0.9,
+    stroke = TRUE,
+    weight = 1,                         # Thin border around the dots
+    popup = ~popup_text,                # Complete metrics box shown on click
+    label = ~neighbourhood_cleansed     # Simple neighborhood name hover tooltip
+  ) %>%
+  
+  # Revenue Legend
+  addLegend(
+    pal = rev_pal, 
+    values = prmarket_sf$avg_year_revenue, 
+    title = "Annual Revenue",
+    position = "topright",
+    labFormat = labelFormat(prefix = "$")
+  )
+```
+:::
+
+::: {.column style="vertical-align: middle; padding-left: 5%;" width="45%"}
+**Private rooms** with the best revenue are located close to the coast. Likewise, most entire apartments are located around San Diego, California. Consumers decide to opt for properties close to the ocean, even though **suppliers of this kind of property are more spread throughout the center of the city.**
+:::
+:::::
+
+###### **Shared Apartments room in San Diego Neighborhood**
+
+::::: {#layout-container .columns}
+::: {.column width="50%" style="vertical-align: middle;"}
+```{r}
+#filter shared room
+library(plotly)
+library(leaflet)
+
+srmarket<-airbnb %>% 
+  mutate(price=as.numeric(str_remove_all(price, "[\\$,]")), host_acceptance_rate=as.numeric(str_remove_all(host_acceptance_rate, "[\\%]"))) %>%
+  filter(!is.na(price), room_type=="Shared room",price<=5000, !is.na(neighbourhood_cleansed), !is.na(host_acceptance_rate))%>%
+  group_by(neighbourhood_cleansed) %>%
+  summarise(number_of_proper= n(), acceptance_rate = round(mean(host_acceptance_rate), 2), avg_price = round(mean(price),2), year_occupancy = round(365- mean(availability_365), 0), avg_year_revenue=round(avg_price*year_occupancy, 2),latitude = median(latitude), longitude = median(longitude), .groups = "drop") %>%
+  select(neighbourhood_cleansed, number_of_proper, avg_price, year_occupancy, avg_year_revenue, acceptance_rate, latitude, longitude)
+
+
+# Bonus: caches the data so it doesn't redownload every time
+options(tigris_use_cache = TRUE) 
+options(tigris_progress_bar = FALSE)
+
+#making coordinates by mixing together long and lat
+srmarket_sf<-srmarket %>% 
+  st_as_sf(coords=c("longitude", "latitude"),crs=4326)
+
+#adding tool data
+srmarket_plot<-srmarket_sf %>%
+  mutate(tooltip_text=paste0(
+    "<b>Neighborhood:</b> ", neighbourhood_cleansed, "<br>",
+    "<b>Properties:</b> ", number_of_proper, "<br>",
+    "<b>Revenue:</b> ", dollar(avg_year_revenue)))
+
+#getting map of San Diego
+ca_places<-places(state="CA", year=2025, cb=TRUE, class="sf") #only ca
+
+san_diego_boundary <- ca_places %>% #only San Diego
+  filter(NAME %in% c("San Diego", "El Cajon", "Imperial Beach", "La Mesa", "Lemon Grove", "National City", "Santeem" ,"Chula Vista","Coronado"))
+
+# 1. Create the expanded custom text box containing all three metrics
+srmarket_sf <- srmarket_sf %>%
+  mutate(popup_text = paste0(
+    "<b>Neighborhood:</b> ", neighbourhood_cleansed, "<br>",
+    "<b>Total Properties:</b> ", number_of_proper, "<br>",
+    "<b>Annual Revenue:</b> ", dollar(avg_year_revenue)
+  ))
+
+# 2. Build the color palette function (high = deep blue, low = light gray)
+rev_pal <- colorNumeric(
+  palette = c(low = "#D1DFF6",high = "#0570B0"),
+  domain = srmarket_sf$avg_year_revenue
+)
+
+# 3. Render the interactive map
+leaflet(width = "100%", height = 500) %>%
+  addProviderTiles(providers$CartoDB.Positron) %>%
+  # Clean, minimal gray background map
+  addProviderTiles(providers$CartoDB.Positron) %>% 
+  
+  # Base San Diego boundaries
+  addPolygons(
+    data = san_diego_boundary,
+    fillColor = "#E0E0E0",
+    color = "black",
+    weight = 0.3,
+    opacity = 0.2,
+    fillOpacity = 0.5
+  ) %>%
+  
+  # Airbnb dots with a fixed, uniform small size
+  addCircleMarkers(
+    data = srmarket_sf,
+    radius = 2,                         # Fixed small radius for all dots
+    color = ~rev_pal(avg_year_revenue), # Gradient based strictly on revenue
+    fillColor = ~rev_pal(avg_year_revenue),
+    fillOpacity = 0.9,
+    stroke = TRUE,
+    weight = 1,                         # Thin border around the dots
+    popup = ~popup_text,                # Complete metrics box shown on click
+    label = ~neighbourhood_cleansed     # Simple neighborhood name hover tooltip
+  ) %>%
+  
+  # Revenue Legend
+  addLegend(
+    pal = rev_pal, 
+    values = srmarket_sf$avg_year_revenue, 
+    title = "Annual Revenue",
+    bins = 5,
+    position = "topright",
+    labFormat = labelFormat(prefix = "$")
+  )
+```
+:::
+
+::: {.column style="vertical-align: middle; padding-left: 5%;" width="45%"}
+**Shared rooms** in the market offer an interesting insight. Most of the properties with the **highest average revenue are located in the center of the city** rather than near the coast. This is the opposite strategy from what other landlords use when renting other types of properties. Successful rentals are not bound by the rule of high supply in a neighborhood. A high number of properties does not mean better income performance in this type of property.
+:::
+:::::
+
+From the whole analysis, these are some of the main insights:
+
+-   **Location plays a significant role in revenue.** For the most part, properties near the coast generate better revenue for landlords compared to those in the center of the city.
+-   **Higher revenue properties do not commonly face high local competition**, as areas with top revenue tend to have a smaller supply of rentals in the neighborhood.
+-   **Potential investors and renders need to analyze which scenario would be most beneficial to them**, depending on their investment amount and property holdings.
+
+#### Show Data
+
+Here is a table of the efficiency of each neighborhood in the market:
+
+```{r}
+tab_market<-market %>% 
+  transmute("Neighbourhoods"=neighbourhood_cleansed, "Acceptance Rate (%)"=acceptance_rate, Properties=number_of_proper, "Price (unit)"=avg_price, "Occupancy"=year_occupancy, "Total Revenue ($)"=avg_year_revenue) %>% 
+  arrange(desc(`Total Revenue ($)`))
+
+datatable(tab_market, caption = tags$caption(
+    style = "caption-side: top; text-align: center; color: #000080; font-size: 180%; font-weight: bold;",
+    "Annual Neighborhood Revenue Rent"))
+```
+:::
+
+### Neighborhood Area - Customer Preference
+
+People's impression often correlates with the sucess of renting properties. here are some of the to create good impression with the work
+
+```{r}
+#| message: false
+#| warning: false
+
+library(DBI)
+library(duckdb)
+
+sql <- read.csv("listings.csv")
+con <- dbConnect(duckdb()) #connection
+
+# 3. Register your R data frame as a SQL table
+dbWriteTable(con, "listings", sql)
+```
+
+```{sql, connection=con, output.var="rlistings"}
+WITH aggregated_listings AS (
+    SELECT 
+        neighbourhood_cleansed AS loc_neighborhood,
+        COUNT(id) AS num_units,
+        CAST(AVG(TRY_CAST(REPLACE(REPLACE(price, '$', ''), ',', '') AS DECIMAL(10,2))) AS DECIMAL(10,2)) AS avg_price,
+        AVG(365 - availability_365) AS avg_occupancy,
+        CAST(AVG(accommodates) AS DECIMAL(10,0)) AS accommodates,
+        CAST(AVG(review_scores_accuracy) AS DECIMAL(10,2)) AS r_accuracy,
+        CAST(AVG(review_scores_cleanliness) AS DECIMAL(10,2)) AS r_clean,
+        CAST(AVG(review_scores_communication) AS DECIMAL(10,2)) AS r_communication,
+        CAST(AVG(review_scores_location) AS DECIMAL(10,2)) AS r_location,
+        CAST((CAST(AVG(reviews_per_month) AS DECIMAL(10,2)) * 12) AS DECIMAL(10,2)) AS Yreview_interactions,
+    FROM listings 
+    WHERE price IS NOT NULL
+        AND TRIM(price) != '' -- Filter out empty strings
+        AND availability_365 IS NOT NULL
+        AND room_type IS NOT NULL 
+        -- Safe numeric comparison with TRY_CAST:
+        AND TRY_CAST(REPLACE(REPLACE(price, '$', ''), ',', '') AS DECIMAL(10,2)) <= 5000
+    GROUP BY neighbourhood_cleansed
+)
+
+SELECT 
+    loc_neighborhood,
+    num_units,
+    (avg_price * avg_occupancy) AS total_revenue,
+    accommodates,
+    r_accuracy,
+    r_clean,
+    r_communication,
+    r_location,
+    Yreview_interactions,
+CASE
+    -- Large established markets
+    WHEN num_units >= 100
+         AND total_revenue >= 40000
+         AND r_location >= 4.85
+         AND Yreview_interactions >= 15
+    THEN 'Established High-Performing Market'
+
+    -- Small sample but exceptional revenue
+    WHEN num_units < 30
+         AND total_revenue >= 60000
+         AND r_location >= 4.85
+    THEN 'Luxury / High Potential'
+
+    -- Solid investment opportunity
+    WHEN total_revenue >= 35000
+         AND avg_occupancy >= 200
+         AND r_location >= 4.80
+    THEN 'Growing Opportunity'
+
+    -- High ratings but limited demand
+    WHEN r_location >= 4.90
+         AND Yreview_interactions < 10
+    THEN 'Quality Market - Low Demand'
+
+        ELSE 'Moderate Market'
+    END AS market_category
+FROM aggregated_listings
+ORDER BY total_revenue DESC;
+```
+
+```{r}
+datatable(
+  rlistings,
+  colnames = c(
+    "Neighborhood"          = "loc_neighborhood",
+    "Units"                 = "num_units",
+    "Est. Total Revenue"    = "total_revenue",
+    "Avg Accommodates"      = "accommodates",
+    "Accuracy Rating"       = "r_accuracy",
+    "Cleanliness Rating"    = "r_clean",
+    "Comm. Rating"          = "r_communication",
+    "Loc. Rating"       = "r_location",
+    "Annual Reviews"        = "Yreview_interactions",
+    "Market Category"       = "market_category"
+  ),
+  options = list(
+    pageLength = 10, 
+    scrollX = TRUE,
+    autoWidth = TRUE,
+    # Shrinks font size directly in the rendered DataTable
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().node()).css({'font-size': '11px'});",
+      "}"
+    )
+  ),
+  rownames = FALSE,
+  width = "100%",
+  class = "compact stripe hover" # 'compact' tightens cell padding across all rows
+) %>%
+  formatCurrency(c("Est. Total Revenue"), "$") %>%
+  formatRound(c("Accuracy Rating", "Cleanliness Rating", "Comm. Rating", "Loc. Rating"), 2)
+```
+
+Just looking at this table is possible to deduct some ideas of what is the customer preference based on the top 10 highest revenue of properties:
+
+* **Guest satisfaction** is consistently high across neighborhoods, with most ratings above 4.8, suggesting that differences in revenue are driven more by location and market demand than by service quality.
+* **Luxury neighborhoods** present growth opportunities, where expanding the number of high-quality listings could capitalize on strong revenue potential.
+* **Investors** should prioritize neighborhoods that balance revenue, demand, and market maturity, rather than focusing solely on the highest annual revenue.
+* **Market size** alone does not guarantee higher revenue.
+* **Established markets offer lower investment risk**, as their performance is supported by hundreds of active listings rather than a few exceptional properties.
+
+### Summary Points
+
+The findings indicate that successful investments depend on balancing expected revenue, market competition, and investment risk: 
+
+* Among all property types, **entire homes/apartments** generate the **highest average annual revenue**, making them the most attractive option for investors seeking maximum returns.
+* **Private rooms** provide a **moderate balance between revenue and affordability**.
+* **shared rooms** generate the **lowest income but achieve the highest occupancy rates**, offering a more stable and predictable source of revenue.
+* **Higher-priced property** types also experience greater **price variability**, resulting in **increased investment risk**.
+* Location is one of the strongest drivers of financial performance. **Properties located near to the coast** consistently **outperform** those farther inland.
+* Many high-performing neighborhoods combine strong demand with relatively limited competition, suggesting that **high market demand can reduce revenue potential**.
+
+* **Service quality** alone does not explain differences in revenue. Customer ratings remain consistently high across nearly all neighborhoods, with average review scores exceeding 4.8 out of 5. 
+
+::: {.callout-note icon=false}
+## Note on Methodology & Technical Implementation
+
+This data was obtained at the Official Airbnb website. I used this data from another project, however, I wanted to show the real value of things 
+:::

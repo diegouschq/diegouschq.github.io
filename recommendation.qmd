@@ -1,0 +1,99 @@
+---
+title: "Letter of Recommendation"
+format: 
+  html: 
+    code-fold: true
+execute:
+  error: true
+  warning: false
+  message: false
+project:
+  type: website
+  output-dir: docs
+---
+
+::: {.columns}
+::: {.column width="20%"}
+![](recommendation/csc.png)
+:::
+
+::: {.column width="80%"}
+**Bakery Assistant - Culinary Support Center **
+
+**Keith Kornelis** 
+
+Culinary Support Center-Bakery | [keith_kornelis@byu.edu](mailto:keith_kornelis@byu.edu)
+
+:::
+:::
+
+Hello, I am the Assistant Pastry Chef at The Culinary Support Center Bakery at Brigham Young University. I worked with Diego Chuquimia in Spring and Summer 2022. He was a very eager and enthusiastic worker. He was willing to do anything that we asked him to work on. Diego was very concerned about making sure he worked all of the hours that were available to him because he is a very responsible person and he supported himself as a student here. Diego also has a very positive personality and is always happy and smiling while he is working. He always did his best work as quickly as possible to get everything done. He came in early and sometimes stayed very late helping anyone he could. He learned well and became a trusted associate with everyone at the CSC. I will miss seeing Diego at work, and hope he finds a good job with friendly people wherever life takes him. Thanks for considering him to work for you.
+
+::: {.columns}
+::: {.column width="20%"}
+![](recommendation/csc2.jpg)
+:::
+
+::: {.column width="80%"}
+**Dairy Production -  Culinary Support Center**
+
+**[Job Rodriguez · 1st](linkedin.com/in/job-rodriguez-77124923/)**
+
+Director of Support Services at Brigham Young University
+
+:::
+:::
+
+I had the privilege of working with Diego at Brigham Young University. He worked with a group of students at the Culinary Support Center which is one of the main food production areas on campus. Diego understood the job expectations every time and delivered on the tasks and projects assigned. He did so by collaborating well with others and finding efficient ways to organize his time and team. He is a dynamic leader and always willing to learn and grow. He is a servant leader that shows a genuine interest for those working with him.
+
+::: {.columns}
+::: {.column width="20%"}
+![](recommendation/library.png)
+:::
+
+::: {.column width="80%"}
+**Librarian Aid Supervisor - BYUI McKay Library**
+
+**[Tyler Springer · 1st](linkedin.com/in/tyler-springer-b984631a6/D)**
+
+BYU-Idaho Student | Accounting Major
+
+:::
+:::
+
+I got to train Diego when he was hired at the David O McKay Library and he was an amazing employee from day one. He is such a personable and genuine person but on top of that he is an amazing learner. He was always asking questions and was always quick to implement what we learned. He'd jump right into working and helping anyone he could. He is honest and a really hard worker. It was a pleasure to train him and work with him.
+
+::: {.columns}
+::: {.column width="20%"}
+![](recommendation/dv.jpg)
+:::
+
+::: {.column width="80%"}
+**Degree Verification - Student Records & Registration**
+
+**[Barbara Clawson · 1st](linkedin.com/in/barbara-clawson/)**
+
+Degree Verification Business Systems Analyst
+
+:::
+:::
+
+I had the pleasure of managing Diego in his role as a Degree Verification Specialist at BYU–Idaho. Diego brings a deep sense of care and commitment to the students he serves. His dedication to supporting their academic journeys is evident in the way he approaches his work—with empathy, patience, and a sincere desire to help. He’s also a thoughtful collaborator and a steady, reliable presence in our department. Diego is now exploring new opportunities in roles such as Data Analyst, Business Analyst, or BI Analyst. I highly recommend him to any team that values heart, a growth mindset, and a student-centered approach.
+
+::: {.columns}
+::: {.column width="20%"}
+![](recommendation/ad.png)
+:::
+
+::: {.column width="80%"}
+**Peer Advisor - Academic Advising BYU Idaho**
+
+**[Shiree Shirley · 1st](linkedin.com/in/shiree-shirley/)**
+
+Academic Advising Coordinator/ Student Success/ Mentor
+
+:::
+:::
+
+Diego is a very positive and talented team member for our Academic Advising team. He is quick to learn and has excellent social skills. I highly recommend him.
+

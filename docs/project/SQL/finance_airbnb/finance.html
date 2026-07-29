@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Diego Chuquimia">
+<meta name="dcterms.date" content="2026-04-05">
+
+<title>Financial Research in Airbnb California – Diego Chuquimia - Data Science Portfolio</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../images/favicon.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-8cb3d322a0bbb2ca30a3960d2dcea576.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-038b89eb4464e19b358ecd4e189371b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-8cb3d322a0bbb2ca30a3960d2dcea576.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="../../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<link href="../../../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+
+<script src="../../../site_libs/datatables-binding-0.34.0/datatables.js"></script>
+
+<script src="../../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+<link href="../../../site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+
+<link href="../../../site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+
+<script src="../../../site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+
+<link href="../../../site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="../../../site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+
+<link href="../../../site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+
+<link href="../../../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+
+<script src="../../../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Diego Chuquimia - Data Science Portfolio</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html"> 
+<span class="menu-text">About me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../resume.html"> 
+<span class="menu-text">My Resume</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../certification.html"> 
+<span class="menu-text">Licenses &amp; Certifications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../project_index.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../recommendation.html"> 
+<span class="menu-text">Letter of Recomnedations</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#data-collection" id="toc-data-collection" class="nav-link active" data-scroll-target="#data-collection">Data collection</a></li>
+  <li><a href="#max-and-min-room-type-price" id="toc-max-and-min-room-type-price" class="nav-link" data-scroll-target="#max-and-min-room-type-price">Max and min room type price</a></li>
+  <li><a href="#customer-preference-and-influence-in-the-market" id="toc-customer-preference-and-influence-in-the-market" class="nav-link" data-scroll-target="#customer-preference-and-influence-in-the-market">Customer Preference and Influence in the market</a></li>
+  <li><a href="#expectative-of-next-year-revenue" id="toc-expectative-of-next-year-revenue" class="nav-link" data-scroll-target="#expectative-of-next-year-revenue">Expectative of Next Year Revenue</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Financial Research in Airbnb California</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Diego Chuquimia </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 5, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="data-collection" class="level3">
+<h3 class="anchored" data-anchor-id="data-collection">Data collection</h3>
+<p>To start with the research, a evaluation of prices of each room type was necessary to clean the data.</p>
+<p>Below, there are some graphs that were made with excel to represent the range of prices by room type:</p>
+<p><img src="scan.png" class="img-fluid"></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(DBI)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(duckdb)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(DT)</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a>sql <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"listings.csv"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(<span class="fu">duckdb</span>()) </span>
+<span id="cb1-7"><a href="#cb1-7"></a></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="fu">dbWriteTable</span>(con, <span class="st">"listings"</span>, sql)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="max-and-min-room-type-price" class="level3">
+<h3 class="anchored" data-anchor-id="max-and-min-room-type-price">Max and min room type price</h3>
+<div class="cell" data-output.var="maxmin">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">SELECT</span> </span>
+<span id="cb2-3"><a href="#cb2-3"></a>    room_type,</span>
+<span id="cb2-4"><a href="#cb2-4"></a>    <span class="fu">MIN</span>(<span class="fu">CAST</span>(<span class="fu">NULLIF</span>(<span class="kw">REPLACE</span>(<span class="kw">REPLACE</span>(price, <span class="st">'$'</span>, <span class="st">''</span>), <span class="st">','</span>, <span class="st">''</span>), <span class="st">''</span>) <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">10</span>,<span class="dv">2</span>))) <span class="kw">AS</span> min_price,</span>
+<span id="cb2-5"><a href="#cb2-5"></a>    <span class="fu">MAX</span>(<span class="fu">CAST</span>(<span class="fu">NULLIF</span>(<span class="kw">REPLACE</span>(<span class="kw">REPLACE</span>(price, <span class="st">'$'</span>, <span class="st">''</span>), <span class="st">','</span>, <span class="st">''</span>), <span class="st">''</span>) <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">10</span>,<span class="dv">2</span>))) <span class="kw">AS</span> max_price,</span>
+<span id="cb2-6"><a href="#cb2-6"></a>    <span class="fu">AVG</span>(<span class="fu">CAST</span>(<span class="fu">NULLIF</span>(<span class="kw">REPLACE</span>(<span class="kw">REPLACE</span>(price, <span class="st">'$'</span>, <span class="st">''</span>), <span class="st">','</span>, <span class="st">''</span>), <span class="st">''</span>) <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">10</span>,<span class="dv">2</span>))) <span class="kw">AS</span> average_price</span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="kw">FROM</span> listings</span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="kw">GROUP</span> <span class="kw">BY</span> room_type;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>maxmin</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["room_type"],"name":[1],"type":["chr"],"align":["left"]},{"label":["min_price"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["max_price"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["average_price"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"Hotel room","2":"89","3":"50000","4":"21521.27586"},{"1":"Entire home/apt","2":"31","3":"50000","4":"377.80819"},{"1":"Private room","2":"11","3":"50040","4":"840.94965"},{"1":"Shared room","2":"37","3":"98","4":"49.30769"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+</section>
+<section id="customer-preference-and-influence-in-the-market" class="level3">
+<h3 class="anchored" data-anchor-id="customer-preference-and-influence-in-the-market">Customer Preference and Influence in the market</h3>
+<div class="cell" data-output.var="rlistings">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">WITH</span> aggregated_listings <span class="kw">AS</span> (</span>
+<span id="cb4-2"><a href="#cb4-2"></a>    <span class="kw">SELECT</span> </span>
+<span id="cb4-3"><a href="#cb4-3"></a>        neighbourhood_cleansed <span class="kw">AS</span> loc_neighborhood,</span>
+<span id="cb4-4"><a href="#cb4-4"></a>        <span class="fu">COUNT</span>(<span class="kw">id</span>) <span class="kw">AS</span> num_units,</span>
+<span id="cb4-5"><a href="#cb4-5"></a>        <span class="fu">CAST</span>(<span class="fu">AVG</span>(TRY_CAST(<span class="kw">REPLACE</span>(<span class="kw">REPLACE</span>(price, <span class="st">'$'</span>, <span class="st">''</span>), <span class="st">','</span>, <span class="st">''</span>) <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">10</span>,<span class="dv">2</span>))) <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">10</span>,<span class="dv">2</span>)) <span class="kw">AS</span> avg_price,</span>
+<span id="cb4-6"><a href="#cb4-6"></a>        <span class="fu">AVG</span>(<span class="dv">365</span> <span class="op">-</span> availability_365) <span class="kw">AS</span> avg_occupancy,</span>
+<span id="cb4-7"><a href="#cb4-7"></a>        <span class="fu">CAST</span>(<span class="fu">AVG</span>(accommodates) <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">10</span>,<span class="dv">0</span>)) <span class="kw">AS</span> accommodates,</span>
+<span id="cb4-8"><a href="#cb4-8"></a>        <span class="fu">CAST</span>(<span class="fu">AVG</span>(review_scores_accuracy) <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">10</span>,<span class="dv">2</span>)) <span class="kw">AS</span> r_accuracy,</span>
+<span id="cb4-9"><a href="#cb4-9"></a>        <span class="fu">CAST</span>(<span class="fu">AVG</span>(review_scores_cleanliness) <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">10</span>,<span class="dv">2</span>)) <span class="kw">AS</span> r_clean,</span>
+<span id="cb4-10"><a href="#cb4-10"></a>        <span class="fu">CAST</span>(<span class="fu">AVG</span>(review_scores_communication) <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">10</span>,<span class="dv">2</span>)) <span class="kw">AS</span> r_communication,</span>
+<span id="cb4-11"><a href="#cb4-11"></a>        <span class="fu">CAST</span>(<span class="fu">AVG</span>(review_scores_location) <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">10</span>,<span class="dv">2</span>)) <span class="kw">AS</span> r_location,</span>
+<span id="cb4-12"><a href="#cb4-12"></a>        <span class="fu">CAST</span>((<span class="fu">CAST</span>(<span class="fu">AVG</span>(reviews_per_month) <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">10</span>,<span class="dv">2</span>)) <span class="op">*</span> <span class="dv">12</span>) <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">10</span>,<span class="dv">2</span>)) <span class="kw">AS</span> Yreview_interactions,</span>
+<span id="cb4-13"><a href="#cb4-13"></a>    <span class="kw">FROM</span> listings </span>
+<span id="cb4-14"><a href="#cb4-14"></a>    <span class="kw">WHERE</span> price <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">NULL</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a>        <span class="kw">AND</span> <span class="fu">TRIM</span>(price) <span class="op">!=</span> <span class="st">''</span> <span class="co">-- Filter out empty strings</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a>        <span class="kw">AND</span> availability_365 <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">NULL</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a>        <span class="kw">AND</span> room_type <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">NULL</span> </span>
+<span id="cb4-18"><a href="#cb4-18"></a>        <span class="co">-- Safe numeric comparison with TRY_CAST:</span></span>
+<span id="cb4-19"><a href="#cb4-19"></a>        <span class="kw">AND</span> TRY_CAST(<span class="kw">REPLACE</span>(<span class="kw">REPLACE</span>(price, <span class="st">'$'</span>, <span class="st">''</span>), <span class="st">','</span>, <span class="st">''</span>) <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">10</span>,<span class="dv">2</span>)) <span class="op">&lt;=</span> <span class="dv">5000</span></span>
+<span id="cb4-20"><a href="#cb4-20"></a>    <span class="kw">GROUP</span> <span class="kw">BY</span> neighbourhood_cleansed</span>
+<span id="cb4-21"><a href="#cb4-21"></a>)</span>
+<span id="cb4-22"><a href="#cb4-22"></a></span>
+<span id="cb4-23"><a href="#cb4-23"></a><span class="kw">SELECT</span> </span>
+<span id="cb4-24"><a href="#cb4-24"></a>    loc_neighborhood,</span>
+<span id="cb4-25"><a href="#cb4-25"></a>    num_units,</span>
+<span id="cb4-26"><a href="#cb4-26"></a>    (avg_price <span class="op">*</span> avg_occupancy) <span class="kw">AS</span> total_revenue,</span>
+<span id="cb4-27"><a href="#cb4-27"></a>    accommodates,</span>
+<span id="cb4-28"><a href="#cb4-28"></a>    r_accuracy,</span>
+<span id="cb4-29"><a href="#cb4-29"></a>    r_clean,</span>
+<span id="cb4-30"><a href="#cb4-30"></a>    r_communication,</span>
+<span id="cb4-31"><a href="#cb4-31"></a>    r_location,</span>
+<span id="cb4-32"><a href="#cb4-32"></a>    Yreview_interactions,</span>
+<span id="cb4-33"><a href="#cb4-33"></a><span class="cf">CASE</span></span>
+<span id="cb4-34"><a href="#cb4-34"></a>    <span class="co">-- Large established markets</span></span>
+<span id="cb4-35"><a href="#cb4-35"></a>    <span class="cf">WHEN</span> num_units <span class="op">&gt;=</span> <span class="dv">100</span></span>
+<span id="cb4-36"><a href="#cb4-36"></a>         <span class="kw">AND</span> total_revenue <span class="op">&gt;=</span> <span class="dv">40000</span></span>
+<span id="cb4-37"><a href="#cb4-37"></a>         <span class="kw">AND</span> r_location <span class="op">&gt;=</span> <span class="fl">4.85</span></span>
+<span id="cb4-38"><a href="#cb4-38"></a>         <span class="kw">AND</span> Yreview_interactions <span class="op">&gt;=</span> <span class="dv">15</span></span>
+<span id="cb4-39"><a href="#cb4-39"></a>    <span class="cf">THEN</span> <span class="st">'Established High-Performing Market'</span></span>
+<span id="cb4-40"><a href="#cb4-40"></a></span>
+<span id="cb4-41"><a href="#cb4-41"></a>    <span class="co">-- Small sample but exceptional revenue</span></span>
+<span id="cb4-42"><a href="#cb4-42"></a>    <span class="cf">WHEN</span> num_units <span class="op">&lt;</span> <span class="dv">30</span></span>
+<span id="cb4-43"><a href="#cb4-43"></a>         <span class="kw">AND</span> total_revenue <span class="op">&gt;=</span> <span class="dv">60000</span></span>
+<span id="cb4-44"><a href="#cb4-44"></a>         <span class="kw">AND</span> r_location <span class="op">&gt;=</span> <span class="fl">4.85</span></span>
+<span id="cb4-45"><a href="#cb4-45"></a>    <span class="cf">THEN</span> <span class="st">'Luxury / High Potential'</span></span>
+<span id="cb4-46"><a href="#cb4-46"></a></span>
+<span id="cb4-47"><a href="#cb4-47"></a>    <span class="co">-- Solid investment opportunity</span></span>
+<span id="cb4-48"><a href="#cb4-48"></a>    <span class="cf">WHEN</span> total_revenue <span class="op">&gt;=</span> <span class="dv">35000</span></span>
+<span id="cb4-49"><a href="#cb4-49"></a>         <span class="kw">AND</span> avg_occupancy <span class="op">&gt;=</span> <span class="dv">200</span></span>
+<span id="cb4-50"><a href="#cb4-50"></a>         <span class="kw">AND</span> r_location <span class="op">&gt;=</span> <span class="fl">4.80</span></span>
+<span id="cb4-51"><a href="#cb4-51"></a>    <span class="cf">THEN</span> <span class="st">'Growing Opportunity'</span></span>
+<span id="cb4-52"><a href="#cb4-52"></a></span>
+<span id="cb4-53"><a href="#cb4-53"></a>    <span class="co">-- High ratings but limited demand</span></span>
+<span id="cb4-54"><a href="#cb4-54"></a>    <span class="cf">WHEN</span> r_location <span class="op">&gt;=</span> <span class="fl">4.90</span></span>
+<span id="cb4-55"><a href="#cb4-55"></a>         <span class="kw">AND</span> Yreview_interactions <span class="op">&lt;</span> <span class="dv">10</span></span>
+<span id="cb4-56"><a href="#cb4-56"></a>    <span class="cf">THEN</span> <span class="st">'Quality Market - Low Demand'</span></span>
+<span id="cb4-57"><a href="#cb4-57"></a></span>
+<span id="cb4-58"><a href="#cb4-58"></a>        <span class="cf">ELSE</span> <span class="st">'Moderate Market'</span></span>
+<span id="cb4-59"><a href="#cb4-59"></a>    <span class="cf">END</span> <span class="kw">AS</span> market_category</span>
+<span id="cb4-60"><a href="#cb4-60"></a><span class="kw">FROM</span> aggregated_listings</span>
+<span id="cb4-61"><a href="#cb4-61"></a><span class="kw">ORDER</span> <span class="kw">BY</span> total_revenue <span class="kw">DESC</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">datatable</span>(</span>
+<span id="cb5-2"><a href="#cb5-2"></a>  rlistings,</span>
+<span id="cb5-3"><a href="#cb5-3"></a>  <span class="at">colnames =</span> <span class="fu">c</span>(</span>
+<span id="cb5-4"><a href="#cb5-4"></a>    <span class="st">"Neighborhood"</span>          <span class="ot">=</span> <span class="st">"loc_neighborhood"</span>,</span>
+<span id="cb5-5"><a href="#cb5-5"></a>    <span class="st">"Units"</span>                 <span class="ot">=</span> <span class="st">"num_units"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6"></a>    <span class="st">"Est. Total Revenue"</span>    <span class="ot">=</span> <span class="st">"total_revenue"</span>,</span>
+<span id="cb5-7"><a href="#cb5-7"></a>    <span class="st">"Avg Accommodates"</span>      <span class="ot">=</span> <span class="st">"accommodates"</span>,</span>
+<span id="cb5-8"><a href="#cb5-8"></a>    <span class="st">"Accuracy Rating"</span>       <span class="ot">=</span> <span class="st">"r_accuracy"</span>,</span>
+<span id="cb5-9"><a href="#cb5-9"></a>    <span class="st">"Cleanliness Rating"</span>    <span class="ot">=</span> <span class="st">"r_clean"</span>,</span>
+<span id="cb5-10"><a href="#cb5-10"></a>    <span class="st">"Comm. Rating"</span>          <span class="ot">=</span> <span class="st">"r_communication"</span>,</span>
+<span id="cb5-11"><a href="#cb5-11"></a>    <span class="st">"Loc. Rating"</span>       <span class="ot">=</span> <span class="st">"r_location"</span>,</span>
+<span id="cb5-12"><a href="#cb5-12"></a>    <span class="st">"Annual Reviews"</span>        <span class="ot">=</span> <span class="st">"Yreview_interactions"</span>,</span>
+<span id="cb5-13"><a href="#cb5-13"></a>    <span class="st">"Market Category"</span>       <span class="ot">=</span> <span class="st">"market_category"</span></span>
+<span id="cb5-14"><a href="#cb5-14"></a>  ),</span>
+<span id="cb5-15"><a href="#cb5-15"></a>  <span class="at">options =</span> <span class="fu">list</span>(</span>
+<span id="cb5-16"><a href="#cb5-16"></a>    <span class="at">pageLength =</span> <span class="dv">10</span>, </span>
+<span id="cb5-17"><a href="#cb5-17"></a>    <span class="at">scrollX =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb5-18"><a href="#cb5-18"></a>    <span class="at">autoWidth =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb5-19"><a href="#cb5-19"></a>    <span class="co"># Shrinks font size directly in the rendered DataTable</span></span>
+<span id="cb5-20"><a href="#cb5-20"></a>    <span class="at">initComplete =</span> <span class="fu">JS</span>(</span>
+<span id="cb5-21"><a href="#cb5-21"></a>      <span class="st">"function(settings, json) {"</span>,</span>
+<span id="cb5-22"><a href="#cb5-22"></a>      <span class="st">"$(this.api().table().node()).css({'font-size': '11px'});"</span>,</span>
+<span id="cb5-23"><a href="#cb5-23"></a>      <span class="st">"}"</span></span>
+<span id="cb5-24"><a href="#cb5-24"></a>    )</span>
+<span id="cb5-25"><a href="#cb5-25"></a>  ),</span>
+<span id="cb5-26"><a href="#cb5-26"></a>  <span class="at">rownames =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb5-27"><a href="#cb5-27"></a>  <span class="at">width =</span> <span class="st">"100%"</span>,</span>
+<span id="cb5-28"><a href="#cb5-28"></a>  <span class="at">class =</span> <span class="st">"compact stripe hover"</span> <span class="co"># 'compact' tightens cell padding across all rows</span></span>
+<span id="cb5-29"><a href="#cb5-29"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-30"><a href="#cb5-30"></a>  <span class="fu">formatCurrency</span>(<span class="fu">c</span>(<span class="st">"Est. Total Revenue"</span>), <span class="st">"$"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-31"><a href="#cb5-31"></a>  <span class="fu">formatRound</span>(<span class="fu">c</span>(<span class="st">"Accuracy Rating"</span>, <span class="st">"Cleanliness Rating"</span>, <span class="st">"Comm. Rating"</span>, <span class="st">"Loc. Rating"</span>), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="htmlwidget-219e6ccffa663126d6dd" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-219e6ccffa663126d6dd">{"x":{"filter":"none","vertical":false,"data":[["Torrey Pines","Wooded Area","North City","Bonita Long Canyon","La Jolla","Estlake Greens","Del Mar Heights","Mission Bay","Del Cerro","Bay Park","Grant Hill","Roseville","Columbia","Pacific Beach","Carmel Valley","San Carlos","Tierrasanta","Bario Logan","Eastlake Trails","Midtown District","Moreno Mission","Sorrento Valley","Rancho Del Rey","Old Town","Core","Cortez Hill","Lynwood Hills","Memorial","Mountain View","Loma Portal","Ocean Beach","Midtown","Allied Gardens","Talmadge","Lake Murray","El Cerritos","Northwest","Little Italy","Rolando","Bay Ho","Rancho Bernadino","Emerald Hills","Kensington","South Park","Sabre Springs","Clairemont Mesa","Scripps Ranch","Marina","West University Heights","Normal Heights","Gaslamp Quarter","East Village","Webster","Encanto","Linda Vista","Mount Hope","City Heights East","North Clairemont","Alta Vista","Carmel Mountain","City Heights West","La Jolla Village","Otay Ranch","Balboa Park","North Hills","Rancho Penasquitos","Terra Nova","Paseo Ranchoero","Serra Mesa","University City","Horton Plaza","Southcrest","College Area","Park West","Southwest","Valencia Park","Nestor","Paradise Hills","Eastlake Vistas","Mira Mesa","Palm City","Gateway","Egger Highlands","Chollas View","Sky Line","Bay Terrace","Amphitheater And Water Park","Darnall","Rolling Hills Ranch","Grantville","Sunbow","Yosemite Dr","Oak Park","Bird Land","Mission Valley","Kearny Mesa","Jomacha-Lomita","East Lake","Lincoln Park","San Ysidro","Eastlake Woods","Tijuana River Valley"],[22,69,26,4,847,3,61,1527,22,204,183,101,61,973,100,55,17,21,1,38,92,12,9,189,138,159,10,77,31,294,560,458,17,38,46,20,112,221,43,102,45,19,44,98,17,162,35,82,140,151,250,445,24,47,131,34,73,114,15,3,158,40,47,218,497,121,5,13,92,126,1,15,78,266,42,30,7,44,9,182,2,17,20,9,8,19,3,41,7,51,11,2,26,44,57,37,12,5,3,11,1,1],[102790.16,65957.62434782609,65211.82384615384,64123.0625,63081.71263282173,59567.66666666666,56360.67672131147,45249.28557956778,41269.54318181818,40279.22666666666,39364.71295081968,38450.88475247525,37946.17114754098,37424.43025693731,35634.874,34983.86181818182,34706.69647058823,33978.63857142857,33840,33485.46868421053,32965.4325,31435.305,31288.02,31075.06793650793,30788.34652173913,30724.35471698113,29919.3,29481.28272727273,29237.74451612903,28989.92571428572,28547.77435714286,28289.58864628821,28228.22470588235,28128.12,28125.91891304348,28095.435,28005.6725,27943.25597285068,27882.96046511628,27636.55470588236,27498.35377777778,27304.42105263158,26893.22113636364,26255.14,26100.20588235294,25755.22617283951,25579.862,25545.25695121951,25199.50285714286,24836.64291390728,24745.5978,24740.13033707865,24705.655,24682.14468085106,24062.73160305343,23951.65764705883,23910.60616438356,23826.80368421052,23739.69933333334,23732.99,23680.44860759493,23503.158,23461.73617021276,23461.23756880734,23248.15225352113,23111.62115702479,22973.2,22894.28076923077,22617.19478260869,21723.07222222222,21584,20773.18666666666,20762.89807692308,20167.64894736842,20160.58333333333,20088.04,19529.70571428571,19461.36818181818,19343.02,18223.18417582418,18190.5,18122.20235294118,18013.575,17928.13,17337.875,17073.17157894737,16020.29,15871.65853658536,15367.62,15164.73294117647,13955.15454545454,13908,13810.89038461538,13612.35886363636,13569.51333333333,13134.93648648649,12971.9175,8052,8000.01,7285.077272727273,660,0],[5,6,7,8,6,8,5,7,8,6,7,5,4,6,5,7,5,5,4,4,5,4,5,5,5,3,5,5,6,5,5,5,6,5,6,4,6,4,5,5,4,6,4,4,3,5,5,4,4,4,5,4,5,7,5,7,5,4,6,7,4,3,4,4,4,5,5,4,5,4,5,4,5,4,6,4,8,6,3,5,8,5,5,8,5,5,2,4,7,3,5,2,6,4,3,5,4,5,1,4,1,1],[4.88,4.83,4.94,4.95,4.86,4.88,4.85,4.83,4.88,4.9,4.81,4.89,4.85,4.83,4.85,4.9,4.67,4.86,5,4.62,4.79,4.98,4.8,4.83,4.8,4.75,4.9,4.82,4.8,4.89,4.85,4.87,4.94,4.9,4.93,4.96,4.85,4.78,4.89,4.91,4.89,4.8,4.93,4.88,4.94,4.86,4.9,4.78,4.88,4.9,4.74,4.77,4.87,4.86,4.85,4.71,4.75,4.86,4.83,4.96,4.85,4.91,4.87,4.83,4.9,4.83,4.75,4.95,4.84,4.85,null,4.77,4.83,4.76,4.88,4.89,4.9,4.88,4.91,4.9,4.98,4.89,4.91,4.81,4.87,4.87,4.69,4.86,4.86,4.9,4.86,4.96,4.82,4.4,4.79,4.9,4.68,4.8,4.97,4.7,4.93,4.8],[4.85,4.8,4.89,4.84,4.83,4.85,4.89,4.79,4.85,4.86,4.82,4.84,4.88,4.79,4.82,4.86,4.64,4.93,5,4.63,4.81,4.96,4.78,4.8,4.82,4.76,4.91,4.78,4.81,4.86,4.82,4.85,4.9,4.79,4.83,4.94,4.86,4.76,4.83,4.87,4.83,4.85,4.92,4.86,4.91,4.82,4.86,4.73,4.84,4.86,4.78,4.73,4.88,4.81,4.82,4.73,4.73,4.78,4.82,4.98,4.85,4.82,4.84,4.79,4.86,4.75,4.74,4.9,4.81,4.81,null,4.72,4.8,4.79,4.87,4.87,4.89,4.87,4.92,4.84,4.77,4.83,4.86,4.81,4.88,4.87,4.51,4.77,4.93,4.83,4.81,4.96,4.79,4.33,4.62,4.88,4.64,4.66,4.95,4.57,4.93,4.73],[4.93,4.89,4.95,5,4.89,4.94,4.93,4.88,4.91,4.94,4.89,4.93,4.79,4.89,4.91,4.91,4.63,4.96,5,4.6,4.87,4.97,4.88,4.9,4.91,4.85,4.92,4.9,4.88,4.93,4.9,4.91,4.97,4.96,4.93,4.98,4.92,4.85,4.95,4.94,4.94,4.91,4.95,4.92,4.96,4.92,4.91,4.81,4.93,4.92,4.83,4.81,4.95,4.93,4.9,4.89,4.88,4.92,4.87,5,4.91,4.86,4.95,4.89,4.94,4.87,4.84,4.98,4.86,4.9,null,4.91,4.9,4.86,4.93,4.95,4.98,4.94,4.96,4.94,4.95,4.95,4.96,4.91,4.97,4.93,4.91,4.85,4.94,4.92,4.92,4.97,4.92,4.39,4.83,4.93,4.82,4.9,4.99,4.67,5,4.9],[4.93,4.92,4.93,4.97,4.94,4.97,4.91,4.93,4.87,4.9,4.54,4.91,4.88,4.9,4.87,4.94,4.7,4.5,5,4.59,4.84,5,4.93,4.82,4.6,4.73,4.89,4.49,4.4,4.85,4.88,4.87,4.93,4.84,4.89,4.85,4.79,4.87,4.76,4.86,4.9,4.59,4.9,4.87,4.95,4.84,4.93,4.92,4.91,4.85,4.72,4.67,4.64,4.68,4.8,4.44,4.45,4.8,4.62,4.94,4.65,4.97,4.91,4.81,4.89,4.88,4.84,4.94,4.88,4.9,null,4.5,4.83,4.7,4.75,4.65,4.83,4.8,4.95,4.85,4.94,4.83,4.83,4.52,4.71,4.82,4.78,4.71,4.92,4.85,4.92,4.92,4.68,4.45,4.86,4.91,4.5,4.96,4.89,4.61,5,4.33],[16.68,19.08,6.96,16.44,19.56,2.52,18.48,20.88,18.84,22.56,26.52,25.92,27.96,22.44,7.2,24.48,21.48,29.4,6.84,17.76,23.76,3.48,16.08,23.28,12.96,24.24,49.2,31.92,25.44,25.32,29.28,29.04,51.24,26.4,28.2,27,26.16,33,19.56,27.96,9.960000000000001,27.48,26.88,27.24,5.4,19.68,19.32,11.04,30.12,27.84,27.36,21.36,33.6,33.84,20.76,26.4,27.12,30.48,34.44,3.6,27.24,8.52,15.36,27.6,30.6,14.28,5.76,16.68,25.2,17.52,null,31.44,24.84,32.76,31.2,43.32,29.76,32.04,13.2,24.48,11.52,25.92,22.32,25.08,35.04,23.04,27,28.8,11.64,17.4,35.4,77.40000000000001,31.68,15,8.52,31.08,20.28,14.64,18.84,16.8,11.4,7.2],["Luxury / High Potential","Moderate Market","Luxury / High Potential","Luxury / High Potential","Established High-Performing Market","Quality Market - Low Demand","Moderate Market","Established High-Performing Market","Moderate Market","Established High-Performing Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Quality Market - Low Demand","Moderate Market","Moderate Market","Quality Market - Low Demand","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Quality Market - Low Demand","Moderate Market","Moderate Market","Moderate Market","Quality Market - Low Demand","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Quality Market - Low Demand","Moderate Market","Quality Market - Low Demand","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market","Moderate Market"]],"container":"<table class=\"compact stripe hover\">\n  <thead>\n    <tr>\n      <th>Neighborhood<\/th>\n      <th>Units<\/th>\n      <th>Est. Total Revenue<\/th>\n      <th>Avg Accommodates<\/th>\n      <th>Accuracy Rating<\/th>\n      <th>Cleanliness Rating<\/th>\n      <th>Comm. Rating<\/th>\n      <th>Loc. Rating<\/th>\n      <th>Annual Reviews<\/th>\n      <th>Market Category<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"scrollX":true,"autoWidth":true,"initComplete":"function(settings, json) {\n$(this.api().table().node()).css({'font-size': '11px'});\n}","columnDefs":[{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatCurrency(data, \"$\", 2, 3, \",\", \".\", true, null);\n  }"},{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]},{"name":"loc_neighborhood","targets":0},{"name":"num_units","targets":1},{"name":"total_revenue","targets":2},{"name":"accommodates","targets":3},{"name":"r_accuracy","targets":4},{"name":"r_clean","targets":5},{"name":"r_communication","targets":6},{"name":"r_location","targets":7},{"name":"Yreview_interactions","targets":8},{"name":"market_category","targets":9}],"order":[],"orderClasses":false}},"evals":["options.initComplete","options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render"],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="expectative-of-next-year-revenue" class="level3">
+<h3 class="anchored" data-anchor-id="expectative-of-next-year-revenue">Expectative of Next Year Revenue</h3>
+<div class="cell" data-output.var="revenue">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">SELECT</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>    room_type,</span>
+<span id="cb6-3"><a href="#cb6-3"></a>    num_properties,</span>
+<span id="cb6-4"><a href="#cb6-4"></a>    occupancy,</span>
+<span id="cb6-5"><a href="#cb6-5"></a>    <span class="fu">CAST</span>(last_year_revenue <span class="op">/</span> occupancy <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">10</span>,<span class="dv">2</span>)) <span class="kw">AS</span> efficient_occupancy,</span>
+<span id="cb6-6"><a href="#cb6-6"></a>    avg_price_night,</span>
+<span id="cb6-7"><a href="#cb6-7"></a>    est_year_revenue,</span>
+<span id="cb6-8"><a href="#cb6-8"></a>    last_year_revenue,</span>
+<span id="cb6-9"><a href="#cb6-9"></a>    est_year_revenue <span class="op">-</span> last_year_revenue <span class="kw">AS</span> revenue_gap,</span>
+<span id="cb6-10"><a href="#cb6-10"></a>    <span class="fu">CAST</span>(((est_year_revenue <span class="op">-</span> last_year_revenue) <span class="op">/</span> last_year_revenue) <span class="op">*</span> <span class="dv">100</span> <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">10</span>,<span class="dv">2</span>)) <span class="kw">AS</span> expected_growth_percentage,</span>
+<span id="cb6-11"><a href="#cb6-11"></a>    <span class="fu">CAST</span>((volatility <span class="op">/</span> est_year_revenue) <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">10</span>,<span class="dv">2</span>)) <span class="kw">AS</span> coeficient_var,</span>
+<span id="cb6-12"><a href="#cb6-12"></a>    <span class="fu">CAST</span>(est_year_revenue <span class="op">/</span> <span class="fu">CAST</span>((volatility <span class="op">/</span> est_year_revenue) <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">10</span>,<span class="dv">2</span>)) <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">10</span>,<span class="dv">2</span>)) <span class="kw">AS</span> risk_adjusted_return</span>
+<span id="cb6-13"><a href="#cb6-13"></a><span class="kw">FROM</span> (</span>
+<span id="cb6-14"><a href="#cb6-14"></a>    <span class="kw">SELECT</span></span>
+<span id="cb6-15"><a href="#cb6-15"></a>        room_type,</span>
+<span id="cb6-16"><a href="#cb6-16"></a>        <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> num_properties,</span>
+<span id="cb6-17"><a href="#cb6-17"></a>        <span class="fu">CAST</span>(<span class="fu">AVG</span>(<span class="dv">365</span> <span class="op">-</span> availability_365) <span class="kw">AS</span> <span class="dt">INTEGER</span>) <span class="kw">AS</span> occupancy,</span>
+<span id="cb6-18"><a href="#cb6-18"></a>        <span class="fu">CAST</span>(<span class="fu">AVG</span>(<span class="fu">CAST</span>(<span class="fu">NULLIF</span>(<span class="kw">REPLACE</span>(<span class="kw">REPLACE</span>(price, <span class="st">'$'</span>, <span class="st">''</span>), <span class="st">','</span>, <span class="st">''</span>), <span class="st">''</span>) <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">10</span>,<span class="dv">2</span>))) <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">10</span>,<span class="dv">2</span>)) <span class="kw">AS</span> avg_price_night,</span>
+<span id="cb6-19"><a href="#cb6-19"></a>        <span class="fu">CAST</span>(<span class="fu">AVG</span>(<span class="fu">CAST</span>(<span class="fu">NULLIF</span>(<span class="kw">REPLACE</span>(<span class="kw">REPLACE</span>(price, <span class="st">'$'</span>, <span class="st">''</span>), <span class="st">','</span>, <span class="st">''</span>), <span class="st">''</span>) <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">10</span>,<span class="dv">2</span>))) <span class="op">*</span> <span class="fu">AVG</span>(<span class="dv">365</span> <span class="op">-</span> availability_365) <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">10</span>,<span class="dv">2</span>)) <span class="kw">AS</span> est_year_revenue,</span>
+<span id="cb6-20"><a href="#cb6-20"></a>        <span class="fu">CAST</span>(<span class="fu">AVG</span>(estimated_revenue_l365d) <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">10</span>,<span class="dv">2</span>)) <span class="kw">AS</span> last_year_revenue,</span>
+<span id="cb6-21"><a href="#cb6-21"></a>        <span class="fu">CAST</span>(<span class="fu">STDDEV</span>(estimated_revenue_l365d) <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">12</span>,<span class="dv">2</span>)) <span class="kw">AS</span> volatility,</span>
+<span id="cb6-22"><a href="#cb6-22"></a>        (<span class="fu">CAST</span>(<span class="fu">STDDEV</span>(estimated_revenue_l365d) <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">12</span>,<span class="dv">2</span>)) <span class="op">/</span> <span class="fu">NULLIF</span>(<span class="fu">CAST</span>(<span class="fu">AVG</span>(estimated_revenue_l365d) <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">12</span>,<span class="dv">2</span>)), <span class="dv">0</span>)) <span class="kw">AS</span> coeficient_var</span>
+<span id="cb6-23"><a href="#cb6-23"></a>    <span class="kw">FROM</span> listings</span>
+<span id="cb6-24"><a href="#cb6-24"></a>    <span class="kw">WHERE</span> price <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">NULL</span></span>
+<span id="cb6-25"><a href="#cb6-25"></a>        <span class="kw">AND</span> availability_365 <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">NULL</span></span>
+<span id="cb6-26"><a href="#cb6-26"></a>        <span class="kw">AND</span> estimated_revenue_l365d <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">NULL</span></span>
+<span id="cb6-27"><a href="#cb6-27"></a>        <span class="kw">AND</span> room_type <span class="op">&lt;&gt;</span> <span class="st">'Hotel room'</span></span>
+<span id="cb6-28"><a href="#cb6-28"></a>        <span class="kw">AND</span> TRY_CAST(<span class="fu">NULLIF</span>(<span class="kw">REPLACE</span>(<span class="kw">REPLACE</span>(price, <span class="st">'$'</span>, <span class="st">''</span>), <span class="st">','</span>, <span class="st">''</span>), <span class="st">''</span>) <span class="kw">AS</span> <span class="dt">DECIMAL</span>(<span class="dv">10</span>,<span class="dv">2</span>)) <span class="op">&lt;=</span> <span class="dv">10000</span></span>
+<span id="cb6-29"><a href="#cb6-29"></a>    <span class="kw">GROUP</span> <span class="kw">BY</span> room_type</span>
+<span id="cb6-30"><a href="#cb6-30"></a>) <span class="kw">AS</span> <span class="kw">summary</span></span>
+<span id="cb6-31"><a href="#cb6-31"></a><span class="kw">ORDER</span> <span class="kw">BY</span> est_year_revenue <span class="kw">DESC</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">datatable</span>(revenue)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-949862b4d4c62ecc98c9" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-949862b4d4c62ecc98c9">{"x":{"filter":"none","vertical":false,"data":[["1","2","3"],["Entire home/apt","Private room","Shared room"],[9774,1407,39],[130,139,179],[182.12,67.95999999999999,27.67],[281.46,157.85,49.31],[36694.9,21990.52,8839.98],[23675.41,9446.370000000001,4952.77],[13019.49,12544.15,3887.21],[54.99,132.79,78.48999999999999],[0.79,3.6,0.6],[46449.24,6108.48,14733.3]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>room_type<\/th>\n      <th>num_properties<\/th>\n      <th>occupancy<\/th>\n      <th>efficient_occupancy<\/th>\n      <th>avg_price_night<\/th>\n      <th>est_year_revenue<\/th>\n      <th>last_year_revenue<\/th>\n      <th>revenue_gap<\/th>\n      <th>expected_growth_percentage<\/th>\n      <th>coeficient_var<\/th>\n      <th>risk_adjusted_return<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[2,3,4,5,6,7,8,9,10,11]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"room_type","targets":1},{"name":"num_properties","targets":2},{"name":"occupancy","targets":3},{"name":"efficient_occupancy","targets":4},{"name":"avg_price_night","targets":5},{"name":"est_year_revenue","targets":6},{"name":"last_year_revenue","targets":7},{"name":"revenue_gap","targets":8},{"name":"expected_growth_percentage","targets":9},{"name":"coeficient_var","targets":10},{"name":"risk_adjusted_return","targets":11}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Diego Chuquimia 2026©</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="tel:+15717767092">
+      <i class="bi bi-telephone" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:chuquimiadiego@gmail.com">
+      <i class="bi bi-envelope" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://linkedin.com/in/diegoach">
+      <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/diegouschq">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

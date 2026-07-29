@@ -3,36 +3,28 @@ title: "Diego Chuquimia | Economics minor in Data Science Portfolio"
 subtitle: "Using R, SQL, Python, Power BI, and Excel to analyze data and build business insights"
 ---
 
+# ***"Passionate about transforming data into meaningful business insights"***
+
 ## How to navigate this portfolio?
 
 Use the top menu to navigate to my resume, project sections, and specific work samples. Each section highlights projects created with different tools, including R, SQL, Python, Power BI, and Excel.
+
+## [About Me](about.qmd)
+
+This is a section regarding my personal journey.
 
 ## [My Resume](resume.qmd)
 
 This section contains my education, experience, technical skills, and professional background.
 
-## [Projects](projects.qmd)
+## [Linceses & Certificates](certification.qmd)
+
+From my professional and academical experience, I learned several skills, completed courses, and participated in various programs that support my knowledge and efforts.
+
+## [Projects](project_index.qmd)
 
 This section gives an overview of my data analytics, finance, and business intelligence projects.
 
-## Project Areas
+## [Recommendation Letters](recommendation.qmd)
 
-### [R Projects](Projects/R/apartment_price_analysis.qmd)
-
-Projects using R, tidyverse, ggplot2, Quarto, maps, and statistical analysis.
-
-### [SQL Projects](Projects/SQL/airbnb_profitability.qmd)
-
-Projects using SQL to clean, summarize, and analyze business and financial data.
-
-### [Python Projects](Projects/Python/student_housing_recommender.qmd)
-
-Projects using Python, pandas, NumPy, and data analysis workflows.
-
-### [Power BI Projects](Projects/PowerBI/financial_dashboard.qmd)
-
-Dashboards and reports built with Power BI.
-
-### [Excel Projects](Projects/Excel/budget_vs_actual.qmd)
-
-Excel projects using formulas, PivotTables, dashboards, and financial reports.
+This section contains formal letters of recommendation and endorsements from past supervisors and managers.

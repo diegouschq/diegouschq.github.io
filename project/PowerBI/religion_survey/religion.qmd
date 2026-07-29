@@ -1,0 +1,20 @@
+---
+title: "Quantifying Faith: Religious Data Insights"
+author: "Diego Chuquimia"
+date: "2025-09-10"
+---
+### Data Connections
+
+![](connections.png)
+
+### Dashboard
+
+![](dashboard.png)
+
+
+### Best insight - Age VS Faith
+![](gender.png)
+
+### Conclusion
+
+![](conclusion.png)

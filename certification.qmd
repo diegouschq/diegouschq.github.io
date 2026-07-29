@@ -1,0 +1,67 @@
+---
+title: "Licenses & Certifications"
+
+---
+
+### LDS Church Certifications
+
+* **Seminary Certificate**
+![](certification/seminary.png){width="50%"}
+
+* **Institute Certificate**
+
+![](certification/institute.png){width="50%"}
+
+### Academic Degrees
+
+* **Asociate's Degree in General Studies**
+
+![](certification/ge.png){width="50%"}
+
+* **Bachelor's Degree Economics (In-Progress 2027)**
+
+### Business Intelligence & Analytics
+
+* **Data Science (SQL, Tableu, Python, Power BI, Excel, and R)**
+
+![](certification/DS.png){width="50%"}
+
+* **Excel & Power BI: Data Analysis and Visualization**
+
+![](certification/EPB.png){width="50%"}
+
+* **Intermediate SQL: Data Reporting and Analysis (In-Progress 2026)**
+
+
+* **Power Automate Essential Training**
+
+![](certification/power.jpg){width="50%"} 
+
+### Finance
+
+* **Alteryx for Financial Services**
+
+![](certification/alteryx.jpg){width="50%"}
+
+
+* **SQL for Finance Professionals**
+
+![](certification/SQL.jpg){width="50%"}
+
+* **CFI Financial Analysis and Modeling Professional Certificate (In-Progress 2026)**
+
+* **Excel for Finance: Building a Three-Statement Operating Model (In-Progress 2026)**
+
+* **Financial Mathematics (In-Progress 2027)**
+
+### Leadership & Personal Development
+
+* **Heber J. Grant Mentoring**
+
+![](certification/mentoring.png){width="50%"}
+
+* **Career Success - Gold Certificate**
+
+![](certification/careersuccess.png){width="50%"}
+
+

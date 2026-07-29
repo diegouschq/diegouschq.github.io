@@ -1,0 +1,67 @@
+---
+title: "Excel & Financial Modeling Portfolio"
+author: "Diego Chuquimia"
+date: "2026-04-05"
+---
+
+###  SECTION 1: Interactive Dashboards & Business KPIs
+
+####  Executive KPI & Performance Dashboard
+
+::::: columns
+::: {.column width="50%" style="vertical-align: middle;"}
+
+![](seller.png)
+
+:::
+
+::: {.column width="50%" style="vertical-align: middle;"}
+
+* **Goal:** Short sentence on what business question or task this solved.
+
+* **Excel Skillset:** XLOOKUP, INDEX/MATCH, Macros/VBA, PivotTables, Dynamic Charts, Slicers, SUMIFS.
+
+* **Impact:** Brief highlight on business value per suppliers based on their products revenue. Using old data, there is a prediction for the next year.
+
+:::
+:::::
+
+
+#### Sales & Product Analytics Report
+
+
+![](sales.png)
+
+####  Income Statement Dashboard
+
+::::: columns
+::: {.column width="50%" style="vertical-align: middle;"}
+![](dashboard2.png)
+
+:::
+
+::: {.column width="50%" style="vertical-align: middle;"}
+
+![](dashboard1.png)
+:::
+::::::
+
+### SECTION 2: Process Automation & Inventory Control
+
+####  Automated Inventory Management & Form
+
+![](invcontrol.png)
+
+####  Project Management Task Tracker
+
+![](kpi.png)
+
+### SECTION 3: Financial Modeling
+
+####  Financial Summary & Forecast Model
+
+![](forecast.png)
+
+####  Supplier Warehouse Forecast
+
+![](executive.png)

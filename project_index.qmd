@@ -1,0 +1,39 @@
+---
+title: "Project Index"
+---
+
+## Project Areas
+
+### [Excel Projects](project/Excel/excel.qmd)
+
+Excel projects using formulas, Pivot Tables, dashboards, and financial reports.
+
+
+### Power BI Projects
+Data analysis, dashboards, and reports built with Power BI.
+
+* [Quantifying Faith: Religious Data Insights](project/PowerBI/religion_survey/religion.qmd)
+
+This project analyzed and interpreted religious data to better understand trends, beliefs, and practices within a spiritual context.
+
+### SQL
+
+Projects using SQL to clean, summarize, and analyze business and financial data.
+
+* [Financial Research in Airbnb California](project\SQL\finance_airbnb\finance.qmd)
+
+Evaluates rental pricing, demand patterns, and overall market profitability across San Diego.
+
+
+### RStudio
+
+Projects using R, tidyverse, ggplot2, Quarto, maps, and statistical analysis.
+
+* [Housing Market Price Trend Analysis](project/R/rent/rent.qmd)
+
+Study of the housing market in Rexburg, Idaho.
+
+* [Analyzing San Diego Airbnb Prices and Profits](project/R/airbnb/airbnb.qmd)
+
+Market Research of Airbnb in San Diego Area.
+

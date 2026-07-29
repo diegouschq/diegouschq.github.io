@@ -1,0 +1,861 @@
+Property,Mean_Contract_Price,Semester,Year,Management_Name,Gender
+Abby Lane Manor,1100,WI,2022,Independent,F
+Abby Lane Manor,1200,WI,2023,Independent,F
+Abby Lane Manor,1200,WI,2024,Independent,F
+Abby Lane Manor,1200,WI,2025,Independent,F
+Abby Lane Manor,1100,SP,2022,Independent,F
+Abby Lane Manor,1200,SP,2023,Independent,F
+Abby Lane Manor,1200,SP,2024,Independent,F
+Abby Lane Manor,1200,SP,2025,Independent,F
+Abri Apartments - Men,1418,WI,2022,Redstone,M
+Abri Apartments - Men,1360,WI,2023,Redstone,M
+Abri Apartments - Men,1660,WI,2024,Redstone,M
+Abri Apartments - Men,1730,WI,2025,Redstone,M
+Abri Apartments - Men,1640,SP,2022,Redstone,M
+Abri Apartments - Men,1565,SP,2023,Redstone,M
+Abri Apartments - Men,1360,SP,2024,Redstone,M
+Abri Apartments - Men,1409,SP,2025,Redstone,M
+Abri Apartments - Women,1386,WI,2022,Redstone,F
+Abri Apartments - Women,1610,WI,2023,Redstone,F
+Abri Apartments - Women,1660,WI,2024,Redstone,F
+Abri Apartments - Women,1730,WI,2025,Redstone,F
+Abri Apartments - Women,1386,SP,2022,Redstone,F
+Abri Apartments - Women,1610,SP,2023,Redstone,F
+Abri Apartments - Women,1360,SP,2024,Redstone,F
+Abri Apartments - Women,1409,SP,2025,Redstone,F
+Alldredge House,1045,WI,2022,Independent,M
+Alldredge House,1045,WI,2023,Independent,M
+Alldredge House,1045,WI,2024,Independent,M
+Alldredge House,1145,WI,2025,Independent,M
+Alldredge House,1045,SP,2022,Independent,M
+Alldredge House,1045,SP,2023,Independent,M
+Alldredge House,1045,SP,2024,Independent,M
+Alldredge House,1145,SP,2025,Independent,M
+Allen's Sunrise Village - Men,1108,WI,2022,Covey,M
+Allen's Sunrise Village - Men,1122,WI,2023,Covey,M
+Allen's Sunrise Village - Men,1182,WI,2024,Covey,M
+Allen's Sunrise Village - Men,1182,WI,2025,Covey,M
+Allen's Sunrise Village - Men,1008,SP,2022,Covey,M
+Allen's Sunrise Village - Men,1072,SP,2023,Covey,M
+Allen's Sunrise Village - Men,1057,SP,2024,Covey,M
+Allen's Sunrise Village - Men,1072,SP,2025,Covey,M
+Allen's Sunrise Village - Womens,1125,WI,2022,Covey,F
+Allen's Sunrise Village - Womens,1160,WI,2023,Covey,F
+Allen's Sunrise Village - Womens,1225,WI,2024,Covey,F
+Allen's Sunrise Village - Womens,1248,WI,2025,Covey,F
+Allen's Sunrise Village - Womens,1075,SP,2022,Covey,F
+Allen's Sunrise Village - Womens,1110,SP,2023,Covey,F
+Allen's Sunrise Village - Womens,1123,SP,2024,Covey,F
+Allen's Sunrise Village - Womens,1110,SP,2025,Covey,F
+Alpine Chalet ,1085,WI,2022,Redstone,M
+Alpine Chalet ,1030,WI,2023,Redstone,M
+Alpine Chalet ,966,WI,2024,Redstone,M
+Alpine Chalet ,999,WI,2025,Redstone,M
+Alpine Chalet ,1030,SP,2022,Redstone,M
+Alpine Chalet ,1030,SP,2023,Redstone,M
+Alpine Chalet ,1049,SP,2024,Redstone,M
+Alpine Chalet ,1016,SP,2025,Redstone,M
+American Avenue - Men,1325,WI,2022,Covey,M
+American Avenue - Men,1355,WI,2023,Covey,M
+American Avenue - Men,1505,WI,2024,Covey,M
+American Avenue - Men,1538,WI,2025,Covey,M
+American Avenue - Men,1250,SP,2022,Covey,M
+American Avenue - Men,1313,SP,2023,Covey,M
+American Avenue - Men,1397,SP,2024,Covey,M
+American Avenue - Men,1313,SP,2025,Covey,M
+American Avenue - Women,1150,WI,2022,Covey,F
+American Avenue - Women,1175,WI,2023,Covey,F
+American Avenue - Women,1225,WI,2024,Covey,F
+American Avenue - Women,1225,WI,2025,Covey,F
+American Avenue - Women,1025,SP,2022,Covey,F
+American Avenue - Women,1125,SP,2023,Covey,F
+American Avenue - Women,1150,SP,2024,Covey,F
+American Avenue - Women,1025,SP,2025,Covey,F
+Arcadia Apartments,995,WI,2022,Connextion,M
+Arcadia Apartments,995,WI,2023,Connextion,M
+Arcadia Apartments,995,WI,2024,Connextion,M
+Arcadia Apartments,1095,WI,2025,Connextion,M
+Arcadia Apartments,995,SP,2022,Connextion,M
+Arcadia Apartments,945,SP,2023,Connextion,M
+Arcadia Apartments,945,SP,2024,Connextion,M
+Arcadia Apartments,945,SP,2025,Connextion,M
+At The Grove,1150,WI,2022,Independent,F
+At The Grove,1150,WI,2023,Independent,F
+At The Grove,1250,WI,2024,Independent,F
+At The Grove,1300,WI,2025,Independent,F
+At The Grove,1150,SP,2022,Independent,F
+At The Grove,1150,SP,2023,Independent,F
+At The Grove,1350,SP,2024,Independent,F
+At The Grove,900,SP,2025,Independent,F
+Autumn Winds - Men,1665,WI,2022,First Serve,M
+Autumn Winds - Men,1665,WI,2023,First Serve,M
+Autumn Winds - Men,1850,WI,2024,First Serve,M
+Autumn Winds - Men,1979,WI,2025,First Serve,M
+Autumn Winds - Men,1725,SP,2022,First Serve,M
+Autumn Winds - Men,1665,SP,2023,First Serve,M
+Autumn Winds - Men,1725,SP,2024,First Serve,M
+Autumn Winds - Men,1979,SP,2025,First Serve,M
+Autumn Winds - Women,1665,WI,2022,First Serve,F
+Autumn Winds - Women,1725,WI,2023,First Serve,F
+Autumn Winds - Women,1850,WI,2024,First Serve,F
+Autumn Winds - Women,1979,WI,2025,First Serve,F
+Autumn Winds - Women,1725,SP,2022,First Serve,F
+Autumn Winds - Women,1725,SP,2023,First Serve,F
+Autumn Winds - Women,1875,SP,2024,First Serve,F
+Autumn Winds - Women,1939,SP,2025,First Serve,F
+Avonlea For Men,1102,WI,2022,First Serve,M
+Avonlea For Men,1124,WI,2023,First Serve,M
+Avonlea For Men,1177,WI,2024,First Serve,M
+Avonlea For Men,1206,WI,2025,First Serve,M
+Avonlea For Men,1102,SP,2022,First Serve,M
+Avonlea For Men,1124,SP,2023,First Serve,M
+Avonlea For Men,1177,SP,2024,First Serve,M
+Avonlea For Men,1206,SP,2025,First Serve,M
+Avonlea For Women,1312,WI,2022,First Serve,F
+Avonlea For Women,1345,WI,2023,First Serve,F
+Avonlea For Women,1398,WI,2024,First Serve,F
+Avonlea For Women,1435,WI,2025,First Serve,F
+Avonlea For Women,1312,SP,2022,First Serve,F
+Avonlea For Women,1345,SP,2023,First Serve,F
+Avonlea For Women,1398,SP,2024,First Serve,F
+Avonlea For Women,1435,SP,2025,First Serve,F
+Avonlea House,1003,WI,2022,First Serve,M
+Avonlea House,1003,WI,2023,First Serve,M
+Avonlea House,1028,WI,2024,First Serve,M
+Avonlea House,1058,WI,2025,First Serve,M
+Avonlea House,1003,SP,2022,First Serve,M
+Avonlea House,1003,SP,2023,First Serve,M
+Avonlea House,1028,SP,2024,First Serve,M
+Avonlea House,1058,SP,2025,First Serve,M
+Bayside Manor ,985,WI,2022,Independent,F
+Bayside Manor ,985,WI,2023,Independent,F
+Bayside Manor ,985,WI,2024,Independent,F
+Bayside Manor ,985,WI,2025,Independent,F
+Bayside Manor ,985,SP,2022,Independent,F
+Bayside Manor ,985,SP,2023,Independent,F
+Bayside Manor ,985,SP,2024,Independent,F
+Bayside Manor ,917,SP,2025,Independent,F
+Birch Plaza - Men,1200,WI,2022,Redstone,M
+Birch Plaza - Men,1200,WI,2023,Redstone,M
+Birch Plaza - Men,1065,WI,2024,Redstone,M
+Birch Plaza - Men,1199,WI,2025,Redstone,M
+Birch Plaza - Men,1185,SP,2022,Redstone,M
+Birch Plaza - Men,1200,SP,2023,Redstone,M
+Birch Plaza - Men,999,SP,2024,Redstone,M
+Birch Plaza - Men,1200,SP,2025,Redstone,M
+Birch Plaza - Women,1200,WI,2022,Redstone,F
+Birch Plaza - Women,1200,WI,2023,Redstone,F
+Birch Plaza - Women,1065,WI,2024,Redstone,F
+Birch Plaza - Women,1199,WI,2025,Redstone,F
+Birch Plaza - Women,1185,SP,2022,Redstone,F
+Birch Plaza - Women,1200,SP,2023,Redstone,F
+Birch Plaza - Women,999,SP,2024,Redstone,F
+Birch Plaza - Women,1200,SP,2025,Redstone,F
+Birch Wood I,1235,WI,2022,Redstone,F
+Birch Wood I,1235,WI,2023,Redstone,F
+Birch Wood I,1065,WI,2024,Redstone,F
+Birch Wood I,1299,WI,2025,Redstone,F
+Birch Wood I,1215,SP,2022,Redstone,F
+Birch Wood I,1235,SP,2023,Redstone,F
+Birch Wood I,1059,SP,2024,Redstone,F
+Birch Wood I,1235,SP,2025,Redstone,F
+Birch Wood II,1425,WI,2022,Redstone,F
+Birch Wood II,1425,WI,2023,Redstone,F
+Birch Wood II,1415,WI,2024,Redstone,F
+Birch Wood II,1549,WI,2025,Redstone,F
+Birch Wood II,1415,SP,2022,Redstone,F
+Birch Wood II,1425,SP,2023,Redstone,F
+Birch Wood II,1483,SP,2024,Redstone,F
+Birch Wood II,1425,SP,2025,Redstone,F
+Bountiful Place,1175,WI,2022,Connextion,M
+Bountiful Place,1099,WI,2023,Connextion,M
+Bountiful Place,995,WI,2024,Connextion,M
+Bountiful Place,995,WI,2025,Connextion,M
+Bountiful Place,1049,SP,2022,Connextion,M
+Bountiful Place,1099,SP,2023,Connextion,M
+Bountiful Place,975,SP,2024,Connextion,M
+Bountiful Place,950,SP,2025,Connextion,M
+Brighton Apartments - Men,1300,WI,2022,Connextion,M
+Brighton Apartments - Men,1325,WI,2023,Connextion,M
+Brighton Apartments - Men,1425,WI,2024,Connextion,M
+Brighton Apartments - Men,1400,WI,2025,Connextion,M
+Brighton Apartments - Men,1300,SP,2022,Connextion,M
+Brighton Apartments - Men,1325,SP,2023,Connextion,M
+Brighton Apartments - Men,1450,SP,2024,Connextion,M
+Brighton Apartments - Men,1388,SP,2025,Connextion,M
+Brighton Apartments - Women,1375,WI,2022,Connextion,F
+Brighton Apartments - Women,1400,WI,2023,Connextion,F
+Brighton Apartments - Women,1400,WI,2024,Connextion,F
+Brighton Apartments - Women,1450,WI,2025,Connextion,F
+Brighton Apartments - Women,1375,SP,2022,Connextion,F
+Brighton Apartments - Women,1400,SP,2023,Connextion,F
+Brighton Apartments - Women,1400,SP,2024,Connextion,F
+Brighton Apartments - Women,1450,SP,2025,Connextion,F
+Brooklyn Apartments,995,WI,2022,Craigland,F
+Brooklyn Apartments,895,WI,2023,Craigland,F
+Brooklyn Apartments,995,WI,2024,Craigland,F
+Brooklyn Apartments,1045,WI,2025,Craigland,F
+Brooklyn Apartments,895,SP,2022,Craigland,F
+Brooklyn Apartments,995,SP,2023,Craigland,F
+Brooklyn Apartments,995,SP,2024,Craigland,F
+Brooklyn Apartments,973,SP,2025,Craigland,F
+Brookside Village - Men,1485,WI,2022,Redstone,M
+Brookside Village - Men,1650,WI,2023,Redstone,M
+Brookside Village - Men,1750,WI,2024,Redstone,M
+Brookside Village - Men,1799,WI,2025,Redstone,M
+Brookside Village - Men,1575,SP,2022,Redstone,M
+Brookside Village - Men,1750,SP,2023,Redstone,M
+Brookside Village - Men,1775,SP,2024,Redstone,M
+Brookside Village - Men,1799,SP,2025,Redstone,M
+Brookside Village - Women,1385,WI,2022,Redstone,F
+Brookside Village - Women,1750,WI,2023,Redstone,F
+Brookside Village - Women,1750,WI,2024,Redstone,F
+Brookside Village - Women,1799,WI,2025,Redstone,F
+Brookside Village - Women,1575,SP,2022,Redstone,F
+Brookside Village - Women,1750,SP,2023,Redstone,F
+Brookside Village - Women,1775,SP,2024,Redstone,F
+Brookside Village - Women,1750,SP,2025,Redstone,F
+Bunkhouse,945,WI,2022,Craigland,M
+Bunkhouse,895,WI,2023,Craigland,M
+Bunkhouse,995,WI,2024,Craigland,M
+Bunkhouse,1083,WI,2025,Craigland,M
+Bunkhouse,895,SP,2022,Craigland,M
+Bunkhouse,995,SP,2023,Craigland,M
+Bunkhouse,995,SP,2024,Craigland,M
+Bunkhouse,965,SP,2025,Craigland,M
+Camden Apartments - Men,1450,WI,2022,Redstone,M
+Camden Apartments - Men,1575,WI,2023,Redstone,M
+Camden Apartments - Men,1640,WI,2024,Redstone,M
+Camden Apartments - Men,1750,WI,2025,Redstone,M
+Camden Apartments - Men,1525,SP,2022,Redstone,M
+Camden Apartments - Men,1575,SP,2023,Redstone,M
+Camden Apartments - Men,1640,SP,2024,Redstone,M
+Camden Apartments - Men,1705,SP,2025,Redstone,M
+Camden Apartments - Women,1383,WI,2022,Redstone,F
+Camden Apartments - Women,1542,WI,2023,Redstone,F
+Camden Apartments - Women,1623,WI,2024,Redstone,F
+Camden Apartments - Women,1727,WI,2025,Redstone,F
+Camden Apartments - Women,1450,SP,2022,Redstone,F
+Camden Apartments - Women,1542,SP,2023,Redstone,F
+Camden Apartments - Women,1623,SP,2024,Redstone,F
+Camden Apartments - Women,1682,SP,2025,Redstone,F
+Carriage House,1175,WI,2022,First Serve,F
+Carriage House,1195,WI,2023,First Serve,F
+Carriage House,1255,WI,2024,First Serve,F
+Carriage House,1290,WI,2025,First Serve,F
+Carriage House,1175,SP,2022,First Serve,F
+Carriage House,1195,SP,2023,First Serve,F
+Carriage House,1255,SP,2024,First Serve,F
+Carriage House,1290,SP,2025,First Serve,F
+Carriage House Townhouse,1295,WI,2022,First Serve,F
+Carriage House Townhouse,1225,WI,2023,First Serve,F
+Carriage House Townhouse,1285,WI,2024,First Serve,F
+Carriage House Townhouse,1320,WI,2025,First Serve,F
+Carriage House Townhouse,1195,SP,2022,First Serve,F
+Carriage House Townhouse,1225,SP,2023,First Serve,F
+Carriage House Townhouse,1285,SP,2024,First Serve,F
+Carriage House Townhouse,1320,SP,2025,First Serve,F
+"Cedars, The - Men",1395,WI,2022,Hemming,M
+"Cedars, The - Men",1545,WI,2023,Hemming,M
+"Cedars, The - Men",1745,WI,2024,Hemming,M
+"Cedars, The - Men",1545,WI,2025,Hemming,M
+"Cedars, The - Men",1195,SP,2022,Hemming,M
+"Cedars, The - Men",1295,SP,2023,Hemming,M
+"Cedars, The - Men",1495,SP,2024,Hemming,M
+"Cedars, The - Men",1295,SP,2025,Hemming,M
+"Cedars, The - Women",1545,WI,2022,Hemming,F
+"Cedars, The - Women",1575,WI,2023,Hemming,F
+"Cedars, The - Women",1795,WI,2024,Hemming,F
+"Cedars, The - Women",1695,WI,2025,Hemming,F
+"Cedars, The - Women",1345,SP,2022,Hemming,F
+"Cedars, The - Women",1395,SP,2023,Hemming,F
+"Cedars, The - Women",1545,SP,2024,Hemming,F
+"Cedars, The - Women",1345,SP,2025,Hemming,F
+Centre Square - Men,1299,WI,2022,BYU-Idaho,M
+Centre Square - Men,1299,WI,2023,BYU-Idaho,M
+Centre Square - Men,1299,WI,2024,BYU-Idaho,M
+Centre Square - Men,1299,WI,2025,BYU-Idaho,M
+Centre Square - Men,1199,SP,2022,BYU-Idaho,M
+Centre Square - Men,1199,SP,2023,BYU-Idaho,M
+Centre Square - Men,1199,SP,2024,BYU-Idaho,M
+Centre Square - Men,1199,SP,2025,BYU-Idaho,M
+Centre Square - Women,1299,WI,2022,BYU-Idaho,F
+Centre Square - Women,1299,WI,2023,BYU-Idaho,F
+Centre Square - Women,1299,WI,2024,BYU-Idaho,F
+Centre Square - Women,1299,WI,2025,BYU-Idaho,F
+Centre Square - Women,1199,SP,2022,BYU-Idaho,F
+Centre Square - Women,1199,SP,2023,BYU-Idaho,F
+Centre Square - Women,1199,SP,2024,BYU-Idaho,F
+Centre Square - Women,1199,SP,2025,BYU-Idaho,F
+Clarke Apartments ,1025,WI,2022,Connextion,M
+Clarke Apartments ,1025,WI,2023,Connextion,M
+Clarke Apartments ,1025,WI,2024,Connextion,M
+Clarke Apartments ,1095,WI,2025,Connextion,M
+Clarke Apartments ,945,SP,2022,Connextion,M
+Clarke Apartments ,1025,SP,2023,Connextion,M
+Clarke Apartments ,995,SP,2024,Connextion,M
+Clarke Apartments ,995,SP,2025,Connextion,M
+College Avenue Apartments,1050,WI,2022,Independent,F
+College Avenue Apartments,995,WI,2023,Independent,F
+College Avenue Apartments,1223,WI,2024,Independent,F
+College Avenue Apartments,1275,WI,2025,Independent,F
+College Avenue Apartments,1150,SP,2022,Independent,F
+College Avenue Apartments,1225,SP,2023,Independent,F
+College Avenue Apartments,1223,SP,2024,Independent,F
+College Avenue Apartments,1275,SP,2025,Independent,F
+Colonial Heights Townhouses,900,WI,2022,Independent,M
+Colonial Heights Townhouses,900,WI,2023,Independent,M
+Colonial Heights Townhouses,900,WI,2024,Independent,M
+Colonial Heights Townhouses,900,WI,2025,Independent,M
+Colonial Heights Townhouses,900,SP,2022,Independent,M
+Colonial Heights Townhouses,900,SP,2023,Independent,M
+Colonial Heights Townhouses,900,SP,2024,Independent,M
+Colonial Heights Townhouses,900,SP,2025,Independent,M
+Colonial House - Men,1160,WI,2022,Redstone,M
+Colonial House - Men,1395,WI,2023,Redstone,M
+Colonial House - Men,1415,WI,2024,Redstone,M
+Colonial House - Men,1445,WI,2025,Redstone,M
+Colonial House - Men,1160,SP,2022,Redstone,M
+Colonial House - Men,1385,SP,2023,Redstone,M
+Colonial House - Men,1325,SP,2024,Redstone,M
+Colonial House - Men,1535,SP,2025,Redstone,M
+Colonial House - Women,1160,WI,2022,Redstone,F
+Colonial House - Women,1395,WI,2023,Redstone,F
+Colonial House - Women,1435,WI,2024,Redstone,F
+Colonial House - Women,1415,WI,2025,Redstone,F
+Colonial House - Women,1160,SP,2022,Redstone,F
+Colonial House - Women,1385,SP,2023,Redstone,F
+Colonial House - Women,1325,SP,2024,Redstone,F
+Colonial House - Women,1535,SP,2025,Redstone,F
+Cottonwood - Men,995,WI,2022,Craigland,M
+Cottonwood - Men,995,WI,2023,Craigland,M
+Cottonwood - Men,995,WI,2024,Craigland,M
+Cottonwood - Men,995,WI,2025,Craigland,M
+Cottonwood - Men,995,SP,2022,Craigland,M
+Cottonwood - Men,995,SP,2023,Craigland,M
+Cottonwood - Men,995,SP,2024,Craigland,M
+Cottonwood - Men,995,SP,2025,Craigland,M
+Cottonwood - Women,995,WI,2022,Craigland,F
+Cottonwood - Women,995,WI,2023,Craigland,F
+Cottonwood - Women,995,WI,2024,Craigland,F
+Cottonwood - Women,995,WI,2025,Craigland,F
+Cottonwood - Women,895,SP,2022,Craigland,F
+Cottonwood - Women,895,SP,2023,Craigland,F
+Cottonwood - Women,995,SP,2024,Craigland,F
+Cottonwood - Women,995,SP,2025,Craigland,F
+"Cove, The - Men",1561,WI,2022,Ball Ventures,M
+"Cove, The - Men",1668,WI,2023,Ball Ventures,M
+"Cove, The - Men",1668,WI,2024,Ball Ventures,M
+"Cove, The - Men",1750,WI,2025,Ball Ventures,M
+"Cove, The - Men",1561,SP,2022,Ball Ventures,M
+"Cove, The - Men",1718,SP,2023,Ball Ventures,M
+"Cove, The - Men",1350,SP,2024,Ball Ventures,M
+"Cove, The - Men",1425,SP,2025,Ball Ventures,M
+"Cove, The - Women",1537,WI,2022,Ball Ventures,F
+"Cove, The - Women",1599,WI,2023,Ball Ventures,F
+"Cove, The - Women",1664,WI,2024,Ball Ventures,F
+"Cove, The - Women",1750,WI,2025,Ball Ventures,F
+"Cove, The - Women",1537,SP,2022,Ball Ventures,F
+"Cove, The - Women",1657,SP,2023,Ball Ventures,F
+"Cove, The - Women",1350,SP,2024,Ball Ventures,F
+"Cove, The - Women",1450,SP,2025,Ball Ventures,F
+Creekside,1350,WI,2022,Independent,M
+Creekside,1350,WI,2023,Independent,M
+Creekside,1400,WI,2024,Independent,M
+Creekside,1425,WI,2025,Independent,M
+Creekside,1350,SP,2022,Independent,M
+Creekside,1350,SP,2023,Independent,M
+Creekside,1400,SP,2024,Independent,M
+Creekside,1400,SP,2025,Independent,M
+Creekside Cottages,1317,WI,2022,Independent,F
+Creekside Cottages,1317,WI,2023,Independent,F
+Creekside Cottages,1367,WI,2024,Independent,F
+Creekside Cottages,1383,WI,2025,Independent,F
+Creekside Cottages,1317,SP,2022,Independent,F
+Creekside Cottages,1317,SP,2023,Independent,F
+Creekside Cottages,1367,SP,2024,Independent,F
+Creekside Cottages,1467,SP,2025,Independent,F
+Crestwood Apartments,940,WI,2022,Connextion,M
+Crestwood Apartments,995,WI,2023,Connextion,M
+Crestwood Apartments,995,WI,2024,Connextion,M
+Crestwood Apartments,995,WI,2025,Connextion,M
+Crestwood Apartments,940,SP,2022,Connextion,M
+Crestwood Apartments,995,SP,2023,Connextion,M
+Crestwood Apartments,995,SP,2024,Connextion,M
+Crestwood Apartments,995,SP,2025,Connextion,M
+Crestwood Cottage,940,WI,2022,Connextion,F
+Crestwood Cottage,995,WI,2023,Connextion,F
+Crestwood Cottage,1095,WI,2024,Connextion,F
+Crestwood Cottage,995,WI,2025,Connextion,F
+Crestwood Cottage,940,SP,2022,Connextion,F
+Crestwood Cottage,995,SP,2023,Connextion,F
+Crestwood Cottage,995,SP,2024,Connextion,F
+Crestwood Cottage,995,SP,2025,Connextion,F
+Crestwood House,895,WI,2022,Connextion,M
+Crestwood House,895,WI,2023,Connextion,M
+Crestwood House,895,WI,2024,Connextion,M
+Crestwood House,895,WI,2025,Connextion,M
+Crestwood House,895,SP,2022,Connextion,M
+Crestwood House,895,SP,2023,Connextion,M
+Crestwood House,895,SP,2024,Connextion,M
+Crestwood House,895,SP,2025,Connextion,M
+Davenport Apartments,895,WI,2022,Independent,F
+Davenport Apartments,825,WI,2023,Independent,F
+Davenport Apartments,895,WI,2024,Independent,F
+Davenport Apartments,945,WI,2025,Independent,F
+Davenport Apartments,825,SP,2022,Independent,F
+Davenport Apartments,825,SP,2023,Independent,F
+Davenport Apartments,875,SP,2024,Independent,F
+Davenport Apartments,875,SP,2025,Independent,F
+Delta Phi Apartments,1045,WI,2022,Covey,M
+Delta Phi Apartments,1095,WI,2023,Covey,M
+Delta Phi Apartments,1095,WI,2024,Covey,M
+Delta Phi Apartments,1145,WI,2025,Covey,M
+Delta Phi Apartments,970,SP,2022,Covey,M
+Delta Phi Apartments,1020,SP,2023,Covey,M
+Delta Phi Apartments,1020,SP,2024,Covey,M
+Delta Phi Apartments,945,SP,2025,Covey,M
+"Gates, The - Men",1655,WI,2022,Redstone,M
+"Gates, The - Men",1700,WI,2023,Redstone,M
+"Gates, The - Men",1413,WI,2024,Redstone,M
+"Gates, The - Men",1695,WI,2025,Redstone,M
+"Gates, The - Men",1630,SP,2022,Redstone,M
+"Gates, The - Men",1645,SP,2023,Redstone,M
+"Gates, The - Men",1740,SP,2024,Redstone,M
+"Gates, The - Men",1850,SP,2025,Redstone,M
+"Gates, The - Women",1655,WI,2022,Redstone,F
+"Gates, The - Women",1740,WI,2023,Redstone,F
+"Gates, The - Women",1413,WI,2024,Redstone,F
+"Gates, The - Women",1695,WI,2025,Redstone,F
+"Gates, The - Women",1630,SP,2022,Redstone,F
+"Gates, The - Women",1645,SP,2023,Redstone,F
+"Gates, The - Women",1400,SP,2024,Redstone,F
+"Gates, The - Women",1695,SP,2025,Redstone,F
+Georgetown Apartments,985,WI,2022,Redstone,M
+Georgetown Apartments,1165,WI,2023,Redstone,M
+Georgetown Apartments,1185,WI,2024,Redstone,M
+Georgetown Apartments,1099,WI,2025,Redstone,M
+Georgetown Apartments,1115,SP,2022,Redstone,M
+Georgetown Apartments,1065,SP,2023,Redstone,M
+Georgetown Apartments,1000,SP,2024,Redstone,M
+Georgetown Apartments,1099,SP,2025,Redstone,M
+Greenbrier - Men,1065,WI,2022,First Serve,M
+Greenbrier - Men,1065,WI,2023,First Serve,M
+Greenbrier - Men,1115,WI,2024,First Serve,M
+Greenbrier - Men,1130,WI,2025,First Serve,M
+Greenbrier - Men,1065,SP,2022,First Serve,M
+Greenbrier - Men,1065,SP,2023,First Serve,M
+Greenbrier - Men,1115,SP,2024,First Serve,M
+Greenbrier - Men,1130,SP,2025,First Serve,M
+Greenbrier - Women,1145,WI,2022,First Serve,F
+Greenbrier - Women,1170,WI,2023,First Serve,F
+Greenbrier - Women,1217,WI,2024,First Serve,F
+Greenbrier - Women,1255,WI,2025,First Serve,F
+Greenbrier - Women,1145,SP,2022,First Serve,F
+Greenbrier - Women,1170,SP,2023,First Serve,F
+Greenbrier - Women,1217,SP,2024,First Serve,F
+Greenbrier - Women,1255,SP,2025,First Serve,F
+Blue Door - Men,985,WI,2022,First Serve,M
+Blue Door - Men,985,WI,2023,First Serve,M
+Blue Door - Men,1025,WI,2024,First Serve,M
+Blue Door - Men,1050,WI,2025,First Serve,M
+Blue Door - Men,985,SP,2022,First Serve,M
+Blue Door - Men,985,SP,2023,First Serve,M
+Blue Door - Men,1025,SP,2024,First Serve,M
+Blue Door - Men,1050,SP,2025,First Serve,M
+Blue Door - Women,940,WI,2022,First Serve,F
+Blue Door - Women,960,WI,2023,First Serve,F
+Blue Door - Women,998,WI,2024,First Serve,F
+Blue Door - Women,1038,WI,2025,First Serve,F
+Blue Door - Women,940,SP,2022,First Serve,F
+Blue Door - Women,960,SP,2023,First Serve,F
+Blue Door - Women,985,SP,2024,First Serve,F
+Blue Door - Women,1038,SP,2025,First Serve,F
+Greenbrier House ,1295,WI,2022,First Serve,M
+Greenbrier House ,1295,WI,2023,First Serve,M
+Greenbrier House ,1320,WI,2024,First Serve,M
+Greenbrier House ,1330,WI,2025,First Serve,M
+Greenbrier House ,1295,SP,2022,First Serve,M
+Greenbrier House ,1295,SP,2023,First Serve,M
+Greenbrier House ,1295,SP,2024,First Serve,M
+Greenbrier House ,1330,SP,2025,First Serve,M
+Jacob's House,1195,WI,2022,First Serve,M
+Jacob's House,1195,WI,2023,First Serve,M
+Jacob's House,1220,WI,2024,First Serve,M
+Jacob's House,1240,WI,2025,First Serve,M
+Jacob's House,1195,SP,2022,First Serve,M
+Jacob's House,1195,SP,2023,First Serve,M
+Jacob's House,1195,SP,2024,First Serve,M
+Jacob's House,1240,SP,2025,First Serve,M
+Pincock House,1475,WI,2022,First Serve,M
+Pincock House,1550,WI,2023,First Serve,M
+Pincock House,1625,WI,2024,First Serve,M
+Pincock House,1695,WI,2025,First Serve,M
+Pincock House,1475,SP,2022,First Serve,M
+Pincock House,1550,SP,2023,First Serve,M
+Pincock House,1625,SP,2024,First Serve,M
+Pincock House,1695,SP,2025,First Serve,M
+Whitfield House,1335,WI,2022,First Serve,F
+Whitfield House,1373,WI,2023,First Serve,F
+Whitfield House,1433,WI,2024,First Serve,F
+Whitfield House,1493,WI,2025,First Serve,F
+Whitfield House,1335,SP,2022,First Serve,F
+Whitfield House,1373,SP,2023,First Serve,F
+Whitfield House,1433,SP,2024,First Serve,F
+Whitfield House,1493,SP,2025,First Serve,F
+Chapman House,1335,WI,2022,First Serve,F
+Chapman House,1373,WI,2023,First Serve,F
+Chapman House,1435,WI,2024,First Serve,F
+Chapman House,1493,WI,2025,First Serve,F
+Chapman House,1335,SP,2022,First Serve,F
+Chapman House,1373,SP,2023,First Serve,F
+Chapman House,1373,SP,2024,First Serve,F
+Chapman House,1495,SP,2025,First Serve,F
+Red Door,995,WI,2022,First Serve,M
+Red Door,995,WI,2023,First Serve,M
+Red Door,1045,WI,2024,First Serve,M
+Red Door,1060,WI,2025,First Serve,M
+Red Door,995,SP,2022,First Serve,M
+Red Door,995,SP,2023,First Serve,M
+Red Door,1045,SP,2024,First Serve,M
+Red Door,1060,SP,2025,First Serve,M
+Briarwood,1030,WI,2022,First Serve,M
+Briarwood,1030,WI,2023,First Serve,M
+Briarwood,1058,WI,2024,First Serve,M
+Briarwood,1103,WI,2025,First Serve,M
+Briarwood,1030,SP,2022,First Serve,M
+Briarwood,1030,SP,2023,First Serve,M
+Briarwood,1058,SP,2024,First Serve,M
+Briarwood,1103,SP,2025,First Serve,M
+Heritage - Men,1300,WI,2022,Redstone,M
+Heritage - Men,1385,WI,2023,Redstone,M
+Heritage - Men,1300,WI,2024,Redstone,M
+Heritage - Men,1420,WI,2025,Redstone,M
+Heritage - Men,1300,SP,2022,Redstone,M
+Heritage - Men,1300,SP,2023,Redstone,M
+Heritage - Men,1400,SP,2024,Redstone,M
+Heritage - Men,1375,SP,2025,Redstone,M
+Heritage - Women,1249,WI,2022,Redstone,F
+Heritage - Women,1300,WI,2023,Redstone,F
+Heritage - Women,1300,WI,2024,Redstone,F
+Heritage - Women,1420,WI,2025,Redstone,F
+Heritage - Women,1300,SP,2022,Redstone,F
+Heritage - Women,1300,SP,2023,Redstone,F
+Heritage - Women,1400,SP,2024,Redstone,F
+Heritage - Women,1375,SP,2025,Redstone,F
+Hillcrest Townhouses - Men,1220,WI,2022,Covey,M
+Hillcrest Townhouses - Men,1370,WI,2023,Covey,M
+Hillcrest Townhouses - Men,1425,WI,2024,Covey,M
+Hillcrest Townhouses - Men,1425,WI,2025,Covey,M
+Hillcrest Townhouses - Men,1095,SP,2022,Covey,M
+Hillcrest Townhouses - Men,1325,SP,2023,Covey,M
+Hillcrest Townhouses - Men,1350,SP,2024,Covey,M
+Hillcrest Townhouses - Men,1325,SP,2025,Covey,M
+Hillcrest Townhouses - Women,1220,WI,2022,Covey,F
+Hillcrest Townhouses - Women,1370,WI,2023,Covey,F
+Hillcrest Townhouses - Women,1425,WI,2024,Covey,F
+Hillcrest Townhouses - Women,1400,WI,2025,Covey,F
+Hillcrest Townhouses - Women,1145,SP,2022,Covey,F
+Hillcrest Townhouses - Women,1325,SP,2023,Covey,F
+Hillcrest Townhouses - Women,1350,SP,2024,Covey,F
+Hillcrest Townhouses - Women,1350,SP,2025,Covey,F
+Jordan Ridge,1349,WI,2022,Triton Investments ,M
+Jordan Ridge,1499,WI,2023,Triton Investments ,M
+Jordan Ridge,1499,WI,2024,Triton Investments ,M
+Jordan Ridge,1799,WI,2025,Triton Investments ,M
+Jordan Ridge,1349,SP,2022,Triton Investments ,M
+Jordan Ridge,1499,SP,2023,Triton Investments ,M
+Jordan Ridge,1499,SP,2024,Triton Investments ,M
+Jordan Ridge,1799,SP,2025,Triton Investments ,M
+Kensington Manor - Men,1140,WI,2022,Independent,M
+Kensington Manor - Men,1140,WI,2023,Independent,M
+Kensington Manor - Men,1175,WI,2024,Independent,M
+Kensington Manor - Men,1175,WI,2025,Independent,M
+Kensington Manor - Men,1130,SP,2022,Independent,M
+Kensington Manor - Men,1140,SP,2023,Independent,M
+Kensington Manor - Men,1175,SP,2024,Independent,M
+Kensington Manor - Men,1175,SP,2025,Independent,M
+Kensington Manor - Women,1265,WI,2022,Independent,M
+Kensington Manor - Women,1265,WI,2023,Independent,M
+Kensington Manor - Women,1300,WI,2024,Independent,M
+Kensington Manor - Women,1300,WI,2025,Independent,M
+Kensington Manor - Women,1259,SP,2022,Independent,M
+Kensington Manor - Women,1300,SP,2023,Independent,M
+Kensington Manor - Women,1300,SP,2024,Independent,M
+Kensington Manor - Women,1300,SP,2025,Independent,M
+La Jolla - Men,1179,WI,2022,Redstone,M
+La Jolla - Men,1179,WI,2023,Redstone,M
+La Jolla - Men,1179,WI,2024,Redstone,M
+La Jolla - Men,1179,WI,2025,Redstone,M
+La Jolla - Men,1179,SP,2022,Redstone,M
+La Jolla - Men,1179,SP,2023,Redstone,M
+La Jolla - Men,1179,SP,2024,Redstone,M
+La Jolla - Men,1179,SP,2025,Redstone,M
+La Jolla - Women,1179,WI,2022,Redstone,F
+La Jolla - Women,1179,WI,2023,Redstone,F
+La Jolla - Women,1179,WI,2024,Redstone,F
+La Jolla - Women,1179,WI,2025,Redstone,F
+La Jolla - Women,1179,SP,2022,Redstone,F
+La Jolla - Women,1179,SP,2023,Redstone,F
+La Jolla - Women,1179,SP,2024,Redstone,F
+La Jolla - Women,1179,SP,2025,Redstone,F
+"Landing, The - Men",1465,WI,2022,Redstone,M
+"Landing, The - Men",1520,WI,2023,Redstone,M
+"Landing, The - Men",1540,WI,2024,Redstone,M
+"Landing, The - Men",1635,WI,2025,Redstone,M
+"Landing, The - Men",1445,SP,2022,Redstone,M
+"Landing, The - Men",1470,SP,2023,Redstone,M
+"Landing, The - Men",1370,SP,2024,Redstone,M
+"Landing, The - Men",1480,SP,2025,Redstone,M
+"Landing, The - Women",1465,WI,2022,Redstone,F
+"Landing, The - Women",1520,WI,2023,Redstone,F
+"Landing, The - Women",1540,WI,2024,Redstone,F
+"Landing, The - Women",1635,WI,2025,Redstone,F
+"Landing, The - Women",1445,SP,2022,Redstone,F
+"Landing, The - Women",1470,SP,2023,Redstone,F
+"Landing, The - Women",1370,SP,2024,Redstone,F
+"Landing, The - Women",1380,SP,2025,Redstone,F
+Legacy Ridge,1424,WI,2022,Triton Investments ,F
+Legacy Ridge,1574,WI,2023,Triton Investments ,F
+Legacy Ridge,1574,WI,2024,Triton Investments ,F
+Legacy Ridge,1799,WI,2025,Triton Investments ,F
+Legacy Ridge,1424,SP,2022,Triton Investments ,F
+Legacy Ridge,1574,SP,2023,Triton Investments ,F
+Legacy Ridge,1574,SP,2024,Triton Investments ,F
+Legacy Ridge,1649,SP,2025,Triton Investments ,F
+"Lodge, The - Men",1484,WI,2022,Ball Venture,M
+"Lodge, The - Men",1537,WI,2023,Ball Venture,M
+"Lodge, The - Men",1537,WI,2024,Ball Venture,M
+"Lodge, The - Men",1587,WI,2025,Ball Venture,M
+"Lodge, The - Men",1484,SP,2022,Ball Venture,M
+"Lodge, The - Men",1537,SP,2023,Ball Venture,M
+"Lodge, The - Men",1287,SP,2024,Ball Venture,M
+"Lodge, The - Men",1287,SP,2025,Ball Venture,M
+"Lodge, The -Women",1507,WI,2022,Ball Venture,F
+"Lodge, The -Women",1676,WI,2023,Ball Venture,F
+"Lodge, The -Women",1676,WI,2024,Ball Venture,F
+"Lodge, The -Women",1626,WI,2025,Ball Venture,F
+"Lodge, The -Women",1507,SP,2022,Ball Venture,F
+"Lodge, The -Women",1676,SP,2023,Ball Venture,F
+"Lodge, The -Women",1326,SP,2024,Ball Venture,F
+"Lodge, The -Women",1359,SP,2025,Ball Venture,F
+Milano Flats -Men,1590,WI,2022,Redstone,M
+Milano Flats -Men,1590,WI,2023,Redstone,M
+Milano Flats -Men,1795,WI,2024,Redstone,M
+Milano Flats -Men,1795,WI,2025,Redstone,M
+Milano Flats -Men,1590,SP,2022,Redstone,M
+Milano Flats -Men,1790,SP,2023,Redstone,M
+Milano Flats -Men,1690,SP,2024,Redstone,M
+Milano Flats -Men,1795,SP,2025,Redstone,M
+Milano Flats -Women,1590,WI,2022,Redstone,F
+Milano Flats -Women,1590,WI,2023,Redstone,F
+Milano Flats -Women,1795,WI,2024,Redstone,F
+Milano Flats -Women,1795,WI,2025,Redstone,F
+Milano Flats -Women,1590,SP,2022,Redstone,F
+Milano Flats -Women,1790,SP,2023,Redstone,F
+Milano Flats -Women,1690,SP,2024,Redstone,F
+Milano Flats -Women,1813,SP,2025,Redstone,F
+Mountain Crest ,1045,WI,2022,Independent,M
+Mountain Crest ,1120,WI,2023,Connextion,M
+Mountain Crest ,1120,WI,2024,Connextion,M
+Mountain Crest ,1120,WI,2025,Connextion,M
+Mountain Crest ,920,SP,2022,Connextion,M
+Mountain Crest ,1020,SP,2023,Connextion,M
+Mountain Crest ,1120,SP,2024,Connextion,M
+Mountain Crest ,945,SP,2025,Connextion,M
+Nauvoo House - Men,1339,WI,2022,Redstone,M
+Nauvoo House - Men,1339,WI,2023,Redstone,M
+Nauvoo House - Men,1450,WI,2024,Redstone,M
+Nauvoo House - Men,1435,WI,2025,Redstone,M
+Nauvoo House - Men,1339,SP,2022,Redstone,M
+Nauvoo House - Men,1350,SP,2023,Redstone,M
+Nauvoo House - Men,1410,SP,2024,Redstone,M
+Nauvoo House - Men,1390,SP,2025,Redstone,M
+Nauvoo House - Women,1339,WI,2022,Redstone,F
+Nauvoo House - Women,1339,WI,2023,Redstone,F
+Nauvoo House - Women,1390,WI,2024,Redstone,F
+Nauvoo House - Women,1435,WI,2025,Redstone,F
+Nauvoo House - Women,1339,SP,2022,Redstone,F
+Nauvoo House - Women,1450,SP,2023,Redstone,F
+Nauvoo House - Women,1450,SP,2024,Redstone,F
+Nauvoo House - Women,1390,SP,2025,Redstone,F
+Northpoint - Men ,1607,WI,2022,Redstone,M
+Northpoint - Men ,1607,WI,2023,Redstone,M
+Northpoint - Men ,1685,WI,2024,Redstone,M
+Northpoint - Men ,1685,WI,2025,Redstone,M
+Northpoint - Men ,1607,SP,2022,Redstone,M
+Northpoint - Men ,1607,SP,2023,Redstone,M
+Northpoint - Men ,1685,SP,2024,Redstone,M
+Northpoint - Men ,1685,SP,2025,Redstone,M
+Northpoint - Women,1599,WI,2022,Redstone,F
+Northpoint - Women,1599,WI,2023,Redstone,F
+Northpoint - Women,1685,WI,2024,Redstone,F
+Northpoint - Women,1668,WI,2025,Redstone,F
+Northpoint - Women,1599,SP,2022,Redstone,F
+Northpoint - Women,1599,SP,2023,Redstone,F
+Northpoint - Women,1642,SP,2024,Redstone,F
+Northpoint - Women,1668,SP,2025,Redstone,F
+Park View Apts - Men,1300,WI,2022,Independent,M
+Park View Apts - Men,1340,WI,2023,Independent,M
+Park View Apts - Men,1380,WI,2024,Independent,M
+Park View Apts - Men,1361,WI,2025,Independent,M
+Park View Apts - Men,1280,SP,2022,Independent,M
+Park View Apts - Men,1320,SP,2023,Independent,M
+Park View Apts - Men,1372,SP,2024,Independent,M
+Park View Apts - Men,1272,SP,2025,Independent,M
+Park View Apts - Women,1300,WI,2022,Independent,F
+Park View Apts - Women,1340,WI,2023,Independent,F
+Park View Apts - Women,1380,WI,2024,Independent,F
+Park View Apts - Women,1361,WI,2025,Independent,F
+Park View Apts - Women,1280,SP,2022,Independent,F
+Park View Apts - Women,1320,SP,2023,Independent,F
+Park View Apts - Women,1372,SP,2024,Independent,F
+Park View Apts - Women,1272,SP,2025,Independent,F
+"Pines, The - Men",1082,WI,2022,Redstone,M
+"Pines, The - Men",1094,WI,2023,Redstone,M
+"Pines, The - Men",1094,WI,2024,Redstone,M
+"Pines, The - Men",1094,WI,2025,Redstone,M
+"Pines, The - Men",1082,SP,2022,Redstone,M
+"Pines, The - Men",892,SP,2023,Redstone,M
+"Pines, The - Men",1094,SP,2024,Redstone,M
+"Pines, The - Men",1094,SP,2025,Redstone,M
+"Pines, The -Women",1100,WI,2022,Redstone,F
+"Pines, The -Women",1100,WI,2023,Redstone,F
+"Pines, The -Women",1100,WI,2024,Redstone,F
+"Pines, The -Women",1050,WI,2025,Redstone,F
+"Pines, The -Women",1100,SP,2022,Redstone,F
+"Pines, The -Women",1100,SP,2023,Redstone,F
+"Pines, The -Women",1100,SP,2024,Redstone,F
+"Pines, The -Women",1052,SP,2025,Redstone,F
+Pinnacle Point- Men,1095,WI,2022,Hemming,M
+Pinnacle Point- Men,995,WI,2023,Hemming,M
+Pinnacle Point- Men,1150,WI,2024,Hemming,M
+Pinnacle Point- Men,1300,WI,2025,Hemming,M
+Pinnacle Point- Men,995,SP,2022,Hemming,M
+Pinnacle Point- Men,1100,SP,2023,Hemming,M
+Pinnacle Point- Men,1150,SP,2024,Hemming,M
+Pinnacle Point- Men,1250,SP,2025,Hemming,M
+Riviera Apartments - Men,1025,WI,2024,Independent,M
+Riviera Apartments - Men,1025,WI,2025,Independent,M
+Riviera Apartments - Men,885,SP,2024,Independent,M
+Riviera Apartments - Men,885,SP,2025,Independent,M
+Riviera Apartments - Women,975,WI,2022,Independent,F
+Riviera Apartments - Women,975,WI,2023,Independent,F
+Riviera Apartments - Women,975,WI,2024,Independent,F
+Riviera Apartments - Women,975,WI,2025,Independent,F
+Riviera Apartments - Women,875,SP,2022,Independent,F
+Riviera Apartments - Women,875,SP,2023,Independent,F
+Riviera Apartments - Women,775,SP,2024,Independent,F
+Riviera Apartments - Women,875,SP,2025,Independent,F
+Rockland Apartments ,1128,WI,2022,Redstone ,M
+Rockland Apartments ,1128,WI,2023,Redstone ,M
+Rockland Apartments ,1300,WI,2024,Redstone ,M
+Rockland Apartments ,1241,WI,2025,Redstone ,M
+Rockland Apartments ,1128,SP,2022,Redstone ,M
+Rockland Apartments ,1128,SP,2023,Redstone ,M
+Rockland Apartments ,1312,SP,2024,Redstone ,M
+Rockland Apartments ,1329,SP,2025,Redstone ,M
+Royal Crest,1050,WI,2022,Craigland,F
+Royal Crest,995,WI,2023,Craigland,F
+Royal Crest,995,WI,2024,Craigland,F
+Royal Crest,1150,WI,2025,Craigland,F
+Royal Crest,950,SP,2022,Craigland,F
+Royal Crest,895,SP,2023,Craigland,F
+Royal Crest,995,SP,2024,Craigland,F
+Royal Crest,1050,SP,2025,Craigland,F
+Shelbourne Apartments - Men,1235,WI,2022,Connextion,M
+Shelbourne Apartments - Men,1270,WI,2023,Connextion,M
+Shelbourne Apartments - Men,1345,WI,2024,Connextion,M
+Shelbourne Apartments - Men,1495,WI,2025,Connextion,M
+Shelbourne Apartments - Men,1235,SP,2022,Connextion,M
+Shelbourne Apartments - Men,1395,SP,2023,Connextion,M
+Shelbourne Apartments - Men,1395,SP,2024,Connextion,M
+Shelbourne Apartments - Men,1495,SP,2025,Connextion,M
+Snowview Apartments,1095,WI,2022,Independent,F
+Snowview Apartments,1295,WI,2023,Independent,F
+Snowview Apartments,1395,WI,2024,Independent,F
+Snowview Apartments,1320,WI,2025,Independent,F
+Snowview Apartments,1095,SP,2022,Independent,F
+Snowview Apartments,1145,SP,2023,Independent,F
+Snowview Apartments,1345,SP,2024,Independent,F
+Snowview Apartments,1145,SP,2025,Independent,F
+Somerset Apartments - Men,1250,WI,2022,Redstone,M
+Somerset Apartments - Men,1200,WI,2023,Redstone,M
+Somerset Apartments - Men,1290,WI,2024,Redstone,M
+Somerset Apartments - Men,1359,WI,2025,Redstone,M
+Somerset Apartments - Men,1260,SP,2022,Redstone,M
+Somerset Apartments - Men,1200,SP,2023,Redstone,M
+Somerset Apartments - Men,1200,SP,2024,Redstone,M
+Somerset Apartments - Men,1299,SP,2025,Redstone,M
+Somerset Apartments - Women,1250,WI,2022,Redstone,F
+Somerset Apartments - Women,1200,WI,2023,Redstone,F
+Somerset Apartments - Women,1290,WI,2024,Redstone,F
+Somerset Apartments - Women,1299,WI,2025,Redstone,F
+Somerset Apartments - Women,1240,SP,2022,Redstone,F
+Somerset Apartments - Women,1200,SP,2023,Redstone,F
+Somerset Apartments - Women,1200,SP,2024,Redstone,F
+Somerset Apartments - Women,1299,SP,2025,Redstone,F
+Sundance - Men,1555,WI,2022,Connextion,M
+Sundance - Men,1595,WI,2023,Connextion,M
+Sundance - Men,1645,WI,2024,Connextion,M
+Sundance - Men,1645,WI,2025,Connextion,M
+Sundance - Men,1555,SP,2022,Connextion,M
+Sundance - Men,1495,SP,2023,Connextion,M
+Sundance - Men,1445,SP,2024,Connextion,M
+Sundance - Men,1445,SP,2025,Connextion,M
+Sundance - Women,1555,WI,2022,Connextion,F
+Sundance - Women,1595,WI,2023,Connextion,F
+Sundance - Women,1645,WI,2024,Connextion,F
+Sundance - Women,1695,WI,2025,Connextion,F
+Sundance - Women,1555,SP,2022,Connextion,F
+Sundance - Women,1555,SP,2023,Connextion,F
+Sundance - Women,1545,SP,2024,Connextion,F
+Sundance - Women,1495,SP,2025,Connextion,F
+Towers I,1349,WI,2022,Connextion,M 
+Towers I,1450,WI,2023,Connextion,M 
+Towers I,1550,WI,2024,Connextion,M 
+Towers I,1550,WI,2025,Connextion,M 
+Towers I,1400,SP,2022,Connextion,M 
+Towers I,1550,SP,2023,Connextion,M 
+Towers I,1250,SP,2024,Connextion,M 
+Towers I,1250,SP,2025,Connextion,M 
+Towers II ,1445,WI,2022,Connextion,F
+Towers II ,1495,WI,2023,Connextion,F
+Towers II ,1645,WI,2024,Connextion,F
+Towers II ,1545,WI,2025,Connextion,F
+Towers II ,1470,SP,2022,Connextion,F
+Towers II ,1595,SP,2023,Connextion,F
+Towers II ,1199,SP,2024,Connextion,F
+Towers II ,1245,SP,2025,Connextion,F
+University View - Men,1300,WI,2022,Redstone,M
+University View - Men,1350,WI,2023,Redstone,M
+University View - Men,1350,WI,2024,Redstone,M
+University View - Men,1400,WI,2025,Redstone,M
+University View - Men,1350,SP,2022,Redstone,M
+University View - Men,1500,SP,2023,Redstone,M
+University View - Men,1350,SP,2024,Redstone,M
+University View - Men,1500,SP,2025,Redstone,M
+University View - Women,1300,WI,2022,Redstone,F
+University View - Women,1350,WI,2023,Redstone,F
+University View - Women,1350,WI,2024,Redstone,F
+University View - Women,1525,WI,2025,Redstone,F
+University View - Women,1350,SP,2022,Redstone,F
+University View - Women,1500,SP,2023,Redstone,F
+University View - Women,1350,SP,2024,Redstone,F
+University View - Women,1613,SP,2025,Redstone,F
+Windsor Manor - Men,1573,WI,2022,Redstone,M
+Windsor Manor - Men,1699,WI,2023,Redstone,M
+Windsor Manor - Men,1695,WI,2024,Redstone,M
+Windsor Manor - Men,1865,WI,2025,Redstone,M
+Windsor Manor - Men,1625,SP,2022,Redstone,M
+Windsor Manor - Men,1565,SP,2023,Redstone,M
+Windsor Manor - Men,1575,SP,2024,Redstone,M
+Windsor Manor - Men,1795,SP,2025,Redstone,M
+Windsor Manor - Women,1585,WI,2022,Redstone,F
+Windsor Manor - Women,1699,WI,2023,Redstone,F
+Windsor Manor - Women,1695,WI,2024,Redstone,F
+Windsor Manor - Women,1765,WI,2025,Redstone,F
+Windsor Manor - Women,1525,SP,2022,Redstone,F
+Windsor Manor - Women,1565,SP,2023,Redstone,F
+Windsor Manor - Women,1575,SP,2024,Redstone,F
+Windsor Manor - Women,1695,SP,2025,Redstone,F
