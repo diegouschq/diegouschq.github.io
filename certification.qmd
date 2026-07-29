@@ -6,6 +6,7 @@ title: "Licenses & Certifications"
 ### LDS Church Certifications
 
 * **Seminary Certificate**
+
 ![](certification/seminary.png){width="50%"}
 
 * **Institute Certificate**

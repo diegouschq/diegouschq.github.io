@@ -61,7 +61,7 @@ website:
           file: project_index.qmd
         - text: "---"
         - text: "Letter of Recomnedations"
-          file: recomendation.qmd
+          file: recommendation.qmd
         - text: "---"
         
 format:  
