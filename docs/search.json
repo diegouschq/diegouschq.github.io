@@ -120,7 +120,7 @@
     "href": "project/PowerBI/religion_survey/religion.html",
     "title": "Quantifying Faith: Religious Data Insights",
     "section": "",
-    "text": "Data Connections\n\n\n\nDashboard\n\n\n\nBest insight - Age VS Faith\n\n\n\nConclusion\n\n\n\n\n\n Back to top"
+    "text": "Problem\nReligion became an important part of life that people quite often believe it can influence in somebody’s identify. This analysis is to understand how demographic characteristics, religious affiliation, tolerance, and religious commitment interact within a diverse population.\n\n\nSolution\nDeveloped a five-page interactive Power BI dashboard using DAX, data modeling, and survey analytics to transform more than 1,000 survey responses into a intuitive decision tool.\n\n\nOutcome\nThis dashboard enables educators, religious organizations, and community to better understand religious diversity withing a population. By transforming, survey data into actionable insights, the project supports decision-making and encourages initiatives that promote cultural awareness, and respectful engagement across different belief systems.\n\n\nSkills Demostrated\n\nDAX\nData Modeling\nPower Query\nInteractive Dashboard Design\nExploration Data Analysis (EDA)\nBehavioral Analysis\nDemographic Analysis\nCategory Comparison and Analysis\nLikert Scale Analysis\nExecutive Reporting\nData driven reporting\n\n\n\nInteractive Dashboard\n\nData Connections and Cleaning\n\n\n\nDemography\n\n\n\nGender & Age\n\n\n\nTolerance\n\n\n\nCommitment\n\n\n\nConclusion\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "index.html",
