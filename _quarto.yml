@@ -20,12 +20,12 @@ website:
         href: "tel:+15717767092"
       - icon: envelope
         href: mailto:chuquimiadiego@gmail.com
+      - icon: calendar
+        href: https://calendly.com/chuquimiadiego/professional-meeting
       - icon: linkedin
         href: https://linkedin.com/in/diegoach
       - icon: github
         href: https://github.com/diegouschq
-      - icon: calendar-event
-        href: https://calendly.com/chuquimiadiego/professional-meeting
 
   navbar:
     background: primary
