@@ -24,6 +24,8 @@ website:
         href: https://linkedin.com/in/diegoach
       - icon: github
         href: https://github.com/diegouschq
+      - icon: calendly
+        href: https://calendly.com/chuquimiadiego/professional-meeting
 
   navbar:
     background: primary

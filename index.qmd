@@ -2,12 +2,28 @@
 title: "Diego Chuquimia | Economics minor in Data Science Portfolio"
 subtitle: "Using R, SQL, Python, Power BI, and Excel to analyze data and build business insights"
 ---
+::::: columns
+
+::: {.column width="38%"}
+
+![](about/profile.png)
+
+:::
+
+::: {.column style="vertical-align: middle; padding-left: 5%;" width="45%"}
 
 # ***"Passionate about transforming data into meaningful business insights"***
+
+:::
+
+:::::
 
 ## How to navigate this portfolio?
 
 Use the top menu to navigate to my resume, project sections, and specific work samples. Each section highlights projects created with different tools, including R, SQL, Python, Power BI, and Excel.
+
+To get in touch or view my code repositories directly, check out the bottom-left corner of any page for my personal phone number, email address, LinkedIn, GitHub, and Calendly - meeting scheduling link.
+
 
 ## [About Me](about.qmd)
 
