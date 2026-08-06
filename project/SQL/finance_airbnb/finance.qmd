@@ -41,11 +41,13 @@ dbWriteTable(con, "listings", sql)
 
 SELECT 
     room_type,
-    MIN(CAST(NULLIF(REPLACE(REPLACE(price, '$', ''), ',', ''), '') AS DECIMAL(10,2))) AS min_price,
     MAX(CAST(NULLIF(REPLACE(REPLACE(price, '$', ''), ',', ''), '') AS DECIMAL(10,2))) AS max_price,
+    MIN(CAST(NULLIF(REPLACE(REPLACE(price, '$', ''), ',', ''), '') AS DECIMAL(10,2))) AS min_price,
     AVG(CAST(NULLIF(REPLACE(REPLACE(price, '$', ''), ',', ''), '') AS DECIMAL(10,2))) AS average_price
 FROM listings
-GROUP BY room_type;
+WHERE CAST(NULLIF(REPLACE(REPLACE(price, '$', ''), ',', ''), '') AS DECIMAL(10,2))<=10000
+GROUP BY room_type
+ORDER BY average_price DESC;
 
 ```
 
@@ -119,6 +121,7 @@ CASE
         ELSE 'Moderate Market'
     END AS market_category
 FROM aggregated_listings
+WHERE total_revenue>=1000
 ORDER BY total_revenue DESC;
 ```
 
