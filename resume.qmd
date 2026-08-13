@@ -4,94 +4,58 @@ editor:
   markdown: 
     wrap: 72
 ---
-# Diego Chuquimia
-
-Analytical Economics Student, Data Science Minor, BYU-Idaho.
+# Diego Andres Chuquimia Quiroz
 
 ::: {#webaddress}
 <a href="mailto:chuquimiadiego@gmail.com">chuquimiadiego\@gmail.com</a> \|
 (571) 7767092 \|
 <a href="https://linkedin.com/in/diegoach">linkedin.com/in/diegoach</a> \|
-<a href="https://linktr.ee/chdiego">linktr.ee/chdiego</a>
+<a href="https://dot.cards/diegoch">dot.cards/diegoch</a>
 :::
 
-## Currently
-
-Economics student at Brigham Young University - Idaho, graduating
-December 2026, with a minor in Data Science.
-
-### Specialized in
-
-Financial analysis, operational reporting, and business intelligence
-tools including Power BI, Excel, SQL, and R.
-
-### Specialization and Research interests
-
-Treasury operations, financial systems, forecasting, dashboard
-development, and enterprise analytics.
+Economics student with experience in financial analysis, operational reporting, and business intelligence tools including Power BI, Excel, SQL, and R. Skilled in dashboard development, data validation, and statistical analysis with a strong interest in financial systems, forecasting, and enterprise analytics.
 
 ## Education
 
-`September 2022 - December 2026`
-**Brigham Young University - Idaho**
+**Brigham Young University - Idaho** 
+**Bachelor of Science in Economics | Data Science minor** 
 
-- Bachelor of Science in Economics / Data Science minor
-- Marketing Director at Economics Society
-- Relevant coursework: Business Analytics, Labor Economics, Law &
-  Economics, Behavioral Economics, and Data Science Programming
+- Expected Graduation: December 2026.
+- Marketing Director at Economics Society 
+- Relevant coursework: Business Analytics, Labor Economics, Law & Economics, Behavioral Economics, and Data Wrangling and Visualization.
 
 ## Core Competencies
 
-### Certifications
+**Certifications:** Data Science, Excel and Power BI – Data Analysis and Visualization, SQL for Finance, Alteryx for Financial Services, Essential Power Automate, AI Generative Essentials.
 
-Data Science, Excel and Power BI – Data Analysis and Visualization,
-SQL for Finance, Alteryx for Financial Services.
+**Excel & Data Visualization:** Pivot Tables, XLOOKUP/VLOOKUP, SUMIFS, COUNTIF, reporting automation dashboards, data visualization, and charts
 
-### Tools & Technologies
+**Business Intelligence Tools:** Microsoft Office tools, Advanced Excel, Power BI, SQL, Tableau
 
-- **Excel & Data Visualization:** PivotTables, XLOOKUP/VLOOKUP,
-  SUMIFS, reporting automation dashboards, data visualization, charts
-- **Business Intelligence:** SQL, Advanced Excel, Power BI, Tableau
-- **Programming:** Python, RStudio
+**Programming & Tools:** SQL, Python, and R.
 
-### Languages
-
-Spanish, fluent; Portuguese, intermediate.
+**Languages:** Spanish, fluent; Portuguese, intermediate.
 
 ## Experience
 
 `July 2024 - September 2025`
-**Degree Verification Specialist**, *Brigham Young University - Idaho*,
-Rexburg, Idaho
+**Degree Verification Specialist**, *Brigham Young University - Idaho*, Rexburg, Idaho
 
-- Created and reviewed degree evaluation reports, maintaining 100%
-  accuracy in awarding processes and ensuring data integrity across
-  student records.
-- Utilized Excel and CX platforms to examine and validate 100+ student
-  data across academic programs, generating tracking reports to improve
-  degree completion and support data-driven decisions.
+- Created and reviewed degree evaluation reports, maintaining 100% accuracy in awarding processes and ensuring data integrity across student records.
+- Utilized Excel and CX platforms to examine and validate 100+ student data across academic programs, generating tracking reports to improve degree completion and support data-driven decisions.
 
 `March 2025 - September 2025`
-**Peer Academic Mentor**, *Brigham Young University - Idaho*,
-Rexburg, Idaho
+**Peer Academic Mentor**, *Brigham Young University - Idaho*, Rexburg, Idaho
 
-- Conducted and compiled detailed research on 25+ academic programs and
-  industry certifications, supporting students in making informed
-  decisions aligned with career market trends and salary benchmarks.
-- Trained peers using 20+ student cases and cooperated cross-functionally
-  to improve accuracy and consistency in degree audit reviews.
+- Conducted and compiled detailed research on 25+ academic programs and industry certifications, supporting students in making informed decisions aligned with career market trends and salary benchmarks.
+- Trained peers using 20+ student cases and cooperated cross-functionally to improve accuracy and consistency in degree audit reviews.
 
 `August 2019 - December 2019`
-**Logistics Assistant**, *Bountiful Corp, Auditing Firm*,
-Santa Cruz, Bolivia
+**Logistics Assistant**, *Bountiful Corp, Auditing Firm*, Santa Cruz, Bolivia
 
-- Performed financial reconciliations and validated transaction records
-  using Excel to support reporting accuracy and financial controls.
-- Verified 100+ financial transactions, receipts, and purchase records
-  against reports and balance sheets, identifying and resolving
-  discrepancies.
-- Assisted with operational reporting and financial documentation
-  processes in a fast-paced auditing environment.
+- Conducted financial analysis using Excel to reconcile financial records and validate balance sheets and financial statements.
+- Verified financial transactions by cross-checking 100+ purchase records against financial reports.
+
 
 ## Projects
 
@@ -100,25 +64,18 @@ Santa Cruz, Bolivia
 
 *R, Advanced Excel, Statistical Modeling, Regression Analysis, ANOVA*
 
-- Analyzed 108 multi-year housing pricing data points using R and Excel
-  to identify financial trends and cost patterns across property
-  management companies.
-- Executed statistical analysis, including mean price comparisons, ANOVA
-  testing, and linear regression modeling, to evaluate pricing changes
-  over time.
-- Identified pricing outliers and interpreted market trends using
-  quantitative analysis and financial data visualization techniques.
+- Analyzed 108 multi-year housing pricing data points using R and Excel to identify financial trends and cost patterns across property management companies.
+- Executed statistical analysis, including mean price comparisons, ANOVA testing, and linear regression modeling, to evaluate pricing changes over time.
+- Identified pricing outliers and interpreted market trends using quantitative analysis and financial data visualization techniques.
 
 `May 2026`
-**Performance Recognition – Power BI Dashboard**
+**Financial Research in Airbnb San Diego - California	April 2026**
 
-*Power BI, Microsoft Forms, Data Integration, Dashboard Development*
+*SQL, R, Excel, Data Integration, Risk Modeling & Financial Analysis*
 
-- Automated reporting workflows and data integration processes to improve
-  reporting efficiency and real-time dashboard accuracy.
-- Developed scalable dashboard and reporting solutions to improve
-  visibility into employee engagement and organizational recognition
-  metrics.
+- Modeled financial revenue gaps and performance growth potentials, projecting a 54.99% expected revenue increase ($13,019 lift) for entire homes and a 132.79% expected growth for private rooms.
+- Synthesized market research into actionable business insights for real estate investment strategies, highlighting optimal property categories and neighborhood submarkets to maximize return on investment.
+
 
 ```{=html}
 <!-- ### Footer

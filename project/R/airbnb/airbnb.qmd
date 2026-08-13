@@ -736,7 +736,8 @@ datatable(
     # Shrinks font size directly in the rendered DataTable
     initComplete = JS(
       "function(settings, json) {",
-      "$(this.api().table().node()).css({'font-size': '11px'});",
+      "  $(this.api().table().node()).css({'font-size': '11px'});",
+      "  $(this.api().table().header()).css({'font-size': '11px', 'padding': '4px'});",
       "}"
     )
   ),
