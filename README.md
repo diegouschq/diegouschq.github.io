@@ -4,7 +4,7 @@ This repository contains my personal data analytics portfolio website built with
 
 ## Website
 
-[View my portfolio website](https://diegoch2018.github.io/Analyst-Portfolio/)
+[View my portfolio website](https://diegouschq.github.io/)
 
 ## About
 
