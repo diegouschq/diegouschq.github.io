@@ -8,7 +8,7 @@ title: "Project Index"
 
 Excel projects using formulas, Pivot Tables, dashboards, and financial reports.
 
-* [Connecting Historical Records Using Bayesian Analysis](project/Excel/familyseafamilysearch.qmd)
+* [Connecting Historical Records Using Bayesian Analysis](project/Excel/familysearch/familysearch.qmd)
 
 Family Search project implementing a Bayesian analysis and data skills.
 
