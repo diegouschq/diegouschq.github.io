@@ -43,7 +43,7 @@ Market Research of Airbnb in San Diego Area.
 
 ### AI Essentials (In-Progress)
 
-Personal and customize implementations with AI for task. 
+Personal and customize implementations with AI for task.
 
 ### Power Automate (In-Progress)
 
