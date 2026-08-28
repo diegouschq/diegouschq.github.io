@@ -18,6 +18,7 @@ library(readr)
 library(tidyverse)
 library(pander)
 library(DT)
+library(car)
 library(mosaic)
 library(dplyr)
 library(ggplot2)
@@ -253,6 +254,26 @@ The regression analysis shows that most firms **are no statistically significant
 Most management companies increase rent at the same speed, and their prices are not statistically different from each other. Only one company — Triton Investments — stands out. They start off cheaper, but their prices go up faster every year than anyone else. So, in general, managers are not causing big differences in price trends, but Triton is an exception.
 
 We can see that Triton Investments has more related evidence to grow a 136.7$ per year faster than other managements. 
+
+
+####  Recommendation
+
+From all student apartments at Rexburg, here is a table with an important suggestion at the time students want to get convinient apartment contract:
+
+```{r}
+rent<-read_csv("rent.csv")
+r<-rent %>%
+  group_by(Property, Management_Name, Gender) %>% 
+  summarise("Price"=round(median(Mean_Contract_Price),2), "Variability Price"=round(sd(Mean_Contract_Price),2), "Residents"=max(Residents))
+datatable(r, filter = "top")
+```
+
+
+* **Looking socialized**: If the main priority is to meet people around, the top 3 apartments with most residents are Northpoint, Centre Square, and Cedars. 
+
+* **Save Money**: Prioritizing savings is something important and specially when you are college students. For men students, the cheapest apartments are Crestwood House, Colonial Heights Townhouses, and Riviera Apartments. For women students, the best options are Davenport Apartments, Riviera Apartments, and the Blue Door. 
+
+* **Consistent in Price**: Thinking in long-term, nobody would like to pay each semester more and more money that when they started. The place with the lowest variability respect price during consecutive year for men students is Crestwood House. The equivalent for women housing is La Jolla.
 
 
 [^1]: Note that this data was collected from BYU-I Housing by Professor Garret Saunders.

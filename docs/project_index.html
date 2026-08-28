@@ -280,6 +280,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./recommendation.html"> 
 <span class="menu-text">Letter of Recomnedations</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./volunteering.html"> 
+<span class="menu-text">Volunteering</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -346,6 +350,13 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./volunteering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Volunteering</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
     </ul>
     </div>
 </nav>
@@ -362,6 +373,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#power-bi-projects" id="toc-power-bi-projects" class="nav-link" data-scroll-target="#power-bi-projects">Power BI Projects</a></li>
   <li><a href="#sql" id="toc-sql" class="nav-link" data-scroll-target="#sql">SQL</a></li>
   <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">RStudio</a></li>
+  <li><a href="#ai-essentials-in-progress" id="toc-ai-essentials-in-progress" class="nav-link" data-scroll-target="#ai-essentials-in-progress">AI Essentials (In-Progress)</a></li>
+  <li><a href="#power-automate-in-progress" id="toc-power-automate-in-progress" class="nav-link" data-scroll-target="#power-automate-in-progress">Power Automate (In-Progress)</a></li>
+  <li><a href="#python-in-progress" id="toc-python-in-progress" class="nav-link" data-scroll-target="#python-in-progress">Python (In-Progress)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -426,6 +440,16 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="./project/R/airbnb/airbnb.html">Analyzing San Diego Airbnb Prices and Profits</a></li>
 </ul>
 <p>Market Research of Airbnb in San Diego Area.</p>
+</section>
+<section id="ai-essentials-in-progress" class="level3">
+<h3 class="anchored" data-anchor-id="ai-essentials-in-progress">AI Essentials (In-Progress)</h3>
+<p>Personal and customize implementations with AI for task.</p>
+</section>
+<section id="power-automate-in-progress" class="level3">
+<h3 class="anchored" data-anchor-id="power-automate-in-progress">Power Automate (In-Progress)</h3>
+</section>
+<section id="python-in-progress" class="level3">
+<h3 class="anchored" data-anchor-id="python-in-progress">Python (In-Progress)</h3>
 
 
 </section>
@@ -517,7 +541,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/diegoch2018\.github\.io\/Analyst-Portfolio\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

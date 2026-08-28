@@ -15,14 +15,6 @@ editor:
 
 Economics student with experience in financial analysis, operational reporting, and business intelligence tools including Power BI, Excel, SQL, and R. Skilled in dashboard development, data validation, and statistical analysis with a strong interest in financial systems, forecasting, and enterprise analytics.
 
-## Education
-
-**Brigham Young University - Idaho** 
-**Bachelor of Science in Economics | Data Science minor** 
-
-- Expected Graduation: December 2026.
-- Marketing Director at Economics Society 
-- Relevant coursework: Business Analytics, Labor Economics, Law & Economics, Behavioral Economics, and Data Wrangling and Visualization.
 
 ## Core Competencies
 
@@ -30,11 +22,21 @@ Economics student with experience in financial analysis, operational reporting, 
 
 **Excel & Data Visualization:** Pivot Tables, XLOOKUP/VLOOKUP, SUMIFS, COUNTIF, reporting automation dashboards, data visualization, and charts
 
-**Business Intelligence Tools:** Microsoft Office tools, Advanced Excel, Power BI, SQL, Tableau
+**Business Intelligence Tools:** Advanced Excel, Power BI, Tableau, Interactive Dashboards, KPIs, Forecasting, Management Reports, and Data-driven Decisions.
 
 **Programming & Tools:** SQL, Python, and R.
 
-**Languages:** Spanish, fluent; Portuguese, intermediate.
+**Languages:** Spanish, fluent.
+
+
+## Education
+
+**Brigham Young University - Idaho** 
+**Bachelor of Science in Economics | Data Science minor** 
+
+- Marketing Director at Economics Society 
+- Relevant coursework: Business Analytics, Labor Economics, Law & Economics, Behavioral Economics, and Data Wrangling and Visualization.
+
 
 ## Experience
 
@@ -53,13 +55,28 @@ Economics student with experience in financial analysis, operational reporting, 
 `August 2019 - December 2019`
 **Logistics Assistant**, *Bountiful Corp, Auditing Firm*, Santa Cruz, Bolivia
 
-- Conducted financial analysis using Excel to reconcile financial records and validate balance sheets and financial statements.
-- Verified financial transactions by cross-checking 100+ purchase records against financial reports.
+- Audited and reconciled over 100 vendor and contractor transactions against financial reports to ensure accurate expense tracking and contract compliance.
+
+- Conducted financial analysis using Advanced Excel to ensure accuracy in financial records, validate balance sheets, and financial statements.
+
 
 
 ## Projects
 
+`May 2026`
+
+**Quantifying Faith: Religious Data Insights**
+
+*Power BI, DAX, Microsoft Forms, Data Integration, Dashboard Development*
+
+- Analyzed over 1,000 survey responses, implemented DAX measures, and transformed data to reveal behavioral trends in tolerance, commitment, and demographic groups.
+
+- Identify an age-related gap between younger groups having higher rates of nonreligious identification and recommend religious organizations promoting engagement.
+
+
+
 `December 2025`
+
 **Housing Market Price Trend Analysis**
 
 *R, Advanced Excel, Statistical Modeling, Regression Analysis, ANOVA*
@@ -68,13 +85,39 @@ Economics student with experience in financial analysis, operational reporting, 
 - Executed statistical analysis, including mean price comparisons, ANOVA testing, and linear regression modeling, to evaluate pricing changes over time.
 - Identified pricing outliers and interpreted market trends using quantitative analysis and financial data visualization techniques.
 
+
+
 `May 2026`
 **Financial Research in Airbnb San Diego - California	April 2026**
 
 *SQL, R, Excel, Data Integration, Risk Modeling & Financial Analysis*
 
-- Modeled financial revenue gaps and performance growth potentials, projecting a 54.99% expected revenue increase ($13,019 lift) for entire homes and a 132.79% expected growth for private rooms.
+- Developed a market research report analyzing revenue gaps and growth potential which estimated a 54.99 higher revenue percentage for entire homes and 132.79 percent for private rooms.
+
 - Synthesized market research into actionable business insights for real estate investment strategies, highlighting optimal property categories and neighborhood submarkets to maximize return on investment.
+
+
+
+`August 2026`
+**Connecting Historical Records Using Bayesian Method**
+
+*Bayesian Analysis, Record Linkage, Advance Excel, Data Integration, and Risk Modeling*
+
+- Developed a Bayesian model to evaluate 405 historical records by applying likelihood records ratios and sequential probability updates across identity and family attributes.
+
+- Ranked potential matches and identified a candidate with 75 posterior probability percentage for matching the main individual.
+
+
+
+`August 2026`
+**Social Media Growth Strategy & Product Launch Analysis**	
+
+*Excel, AI Generative, Financial Modeling, Customer Acquisition Consumption, Project Management*
+
+- Designed a targeted Reels strategy by analyzing Instagram engagement data, optimizing content for peak viewing windows to drive naturally growing an audience from 18 to 35-year-old.
+
+- Modeled financial evaluation cost, CAC, and opportunity cost to support product launch, and built a Power Automate email to keep customer communication.
+
 
 
 ```{=html}

@@ -280,6 +280,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./recommendation.html"> 
 <span class="menu-text">Letter of Recomnedations</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./volunteering.html"> 
+<span class="menu-text">Volunteering</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -343,6 +347,13 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./recommendation.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Letter of Recomnedations</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./volunteering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Volunteering</span></a>
   </div>
 </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -516,7 +527,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/diegoch2018\.github\.io\/Analyst-Portfolio\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

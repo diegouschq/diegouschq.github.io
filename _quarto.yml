@@ -43,6 +43,8 @@ website:
         file: project_index.qmd
       - text: "Letter of Recomnedations"
         file: recommendation.qmd
+      - text: "Volunteering"
+        file: volunteering.qmd
 
   sidebar:
     - title: "Portfolio"
@@ -64,6 +66,9 @@ website:
         - text: "---"
         - text: "Letter of Recomnedations"
           file: recommendation.qmd
+        - text: "---"
+        - text: "Volunteering"
+          file: volunteering.qmd
         - text: "---"
         
 format:  

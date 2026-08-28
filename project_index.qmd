@@ -40,3 +40,13 @@ Study of the housing market in Rexburg, Idaho.
 
 Market Research of Airbnb in San Diego Area.
 
+
+### AI Essentials (In-Progress)
+
+Personal and customize implementations with AI for task. 
+
+### Power Automate (In-Progress)
+
+
+### Python (In-Progress)
+
