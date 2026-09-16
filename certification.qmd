@@ -1,75 +1,81 @@
 ---
 title: "Licenses & Certifications"
-
 ---
 
+*Click each section to check certificates*
+
+::: {.callout collapse="true"}
 ### LDS Church Certifications
 
-* **Seminary Certificate**
+-   **Seminary Certificate**
 
 ![](certification/seminary.png){width="50%"}
 
-* **Institute Certificate**
+-   **Institute Certificate**
 
 ![](certification/institute.png){width="50%"}
+:::
 
+::: {.callout collapse="true"}
 ### Academic Degrees
 
-* **Asociate's Degree in General Studies**
+-   **Asociate's Degree in General Studies**
 
 ![](certification/ge.png){width="50%"}
 
-* **Bachelor's Degree Economics (In-Progress 2027)**
+-   **Bachelor's Degree Economics (In-Progress 2027)**
 
 ### Business Intelligence & Analytics
 
-* **Data Science (SQL, Tableu, Python, Power BI, Excel, and R)**
+-   **Data Science (SQL, Tableu, Python, Power BI, Excel, and R)**
 
 ![](certification/DS.png){width="50%"}
 
-* **Excel & Power BI: Data Analysis and Visualization**
+-   **Excel & Power BI: Data Analysis and Visualization**
 
 ![](certification/EPB.png){width="50%"}
 
-* **Intermediate SQL: Data Reporting and Analysis (In-Progress 2026)**
+-   **Intermediate SQL: Data Reporting and Analysis (In-Progress 2026)**
 
+-   **Power Automate Essential Training**
 
-* **Power Automate Essential Training**
+![](certification/power.jpg){width="50%"}
+:::
 
-![](certification/power.jpg){width="50%"} 
-
+::: {.callout collapse="true"}
 ### Finance
 
-* **Alteryx for Financial Services**
+-   **Alteryx for Financial Services**
 
 ![](certification/alteryx.jpg){width="50%"}
 
-
-* **SQL for Finance Professionals**
+-   **SQL for Finance Professionals**
 
 ![](certification/SQL.jpg){width="50%"}
 
-* **CFI Financial Analysis and Modeling Professional Certificate (In-Progress 2026)**
+-   **CFI Financial Analysis and Modeling Professional Certificate (In-Progress 2026)**
 
-* **Excel for Finance: Building a Three-Statement Operating Model (In-Progress 2026)**
+-   **Excel for Finance: Building a Three-Statement Operating Model (In-Progress 2026)**
 
-* **Financial Mathematics (In-Progress 2027)**
+-   **Financial Mathematics (In-Progress 2027)**
+:::
 
+::: {.callout collapse="true"}
 ### Marketing
 
-* **Social Media Marketing: Strategy and Optimization **
+-   **Social Media Marketing: Strategy and Optimization**
 
 ![](certification/social.png)
+:::
 
-
+::: {.callout collapse="true"}
 ### Leadership & Personal Development
 
-* **Heber J. Grant Mentoring**
+-   **Heber J. Grant Mentoring**
 
 ![](certification/mentoring.png){width="50%"}
 
-* **Career Success - Gold Certificate**
+-   **Career Success - Gold Certificate**
 
 ![](certification/careersuccess.png){width="50%"}
-
-
+:::

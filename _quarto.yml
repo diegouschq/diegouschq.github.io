@@ -37,11 +37,11 @@ website:
         file: about.qmd
       - text: "My Resume"
         file: resume.qmd
-      - text: "Licenses & Certifications"
+      - text: "Credentials"
         file: certification.qmd  
       - text: "Projects"
         file: project_index.qmd
-      - text: "Letter of Recomnedations"
+      - text: "Recommendations"
         file: recommendation.qmd
       - text: "Volunteering"
         file: volunteering.qmd
@@ -58,13 +58,13 @@ website:
         - text: "About Me"
           file: about.qmd
         - text: "---"
-        - text: "License & Certification"
+        - text: "Credentials"
           file: certification.qmd
         - text: "---"
-        - text: "Projects Overview"
+        - text: "Projects"
           file: project_index.qmd
         - text: "---"
-        - text: "Letter of Recomnedations"
+        - text: "Recommendations"
           file: recommendation.qmd
         - text: "---"
         - text: "Volunteering"

@@ -2,7 +2,6 @@
 title: "Project Index"
 ---
 
-## Project Areas
 
 ### [Excel Projects](project/Excel/excel.qmd)
 
@@ -11,6 +10,7 @@ Excel projects using formulas, Pivot Tables, dashboards, and financial reports.
 * [Connecting Historical Records Using Bayesian Analysis](project/Excel/familysearch/familysearch.qmd)
 
 Family Search project implementing a Bayesian analysis and data skills.
+
 
 ### Power BI Projects
 Data analysis, dashboards, and reports built with Power BI.
@@ -40,13 +40,18 @@ Study of the housing market in Rexburg, Idaho.
 
 Market Research of Airbnb in San Diego Area.
 
+### AI Essentials
 
-### AI Essentials (In-Progress)
+Personal and customize implementations with AI for personal tasks and community implementations.
 
-Personal and customize implementations with AI for task.
+* [Developing Community Learning Assistants Using Custom GPTs](project/AI/Dax/dax.qmd)
 
-### Power Automate (In-Progress)
+Designing specialized GPTs to support community learning in coding learning experience with DAX, language acquisition, and DMV exam preparation.
 
 
-### Python (In-Progress)
+### UX Design
+
+* [Personal Portfolio Website: From Concept to Interactive Prototype](project/UX/portfolio.qmd)
+
+An end-to-end UX design case study documenting the creation of a recruiter-focused personal portfolio website, moving from initial site architecture and user flows to interactive Figma wireframes and high-fidelity prototypes.
 

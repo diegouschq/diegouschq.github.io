@@ -1,0 +1,8 @@
+* [Social Media Growth Strategy & Product Launch Analysis](project/Excel/mark/mark.qmd)
+
+Developed and analyzed two business strategy projects considering project management, marketing analysis, and financial reporting.
+
+
+### [Python Projects](Projects/Python/student_housing_recommender.qmd)
+
+Projects using Python, pandas, NumPy, and data analysis workflows.

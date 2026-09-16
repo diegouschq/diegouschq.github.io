@@ -1,0 +1,93 @@
+---
+title: "Personal Portfolio Website: From Concept to Interactive Prototype"
+author: "Diego Chuquimia"
+date: "2026-09-14"
+format: 
+  html: 
+    code-fold: true
+execute:
+  error: true
+  warning: false
+  message: false
+project:
+  type: website
+  output-dir: docs
+---
+
+##  Background
+
+Creating a personal website is one of the best ways to reach out to more potential hiring managers. This new website was an opportunity to apply the UX design tool such as Figma and Microsoft One Note. 
+
+##  Architecture & Strategy
+
+### Sitemap
+
+![](sitemap.png)
+
+For constructing this website, it is important to have an instruction section for efficient purposes, some personal aspects to connect with the audience, a professional section to inform skills & achievements, a resource section for contacting purposes, and finally some features tools to make the website more adaptable to a different audience. 
+
+### User Flows
+
+There are two main user flows which follow these next patterns:
+
+::::: {#layout-container .columns}
+
+::: {.column width="50%" style="vertical-align: middle;"}
+
+![](retopro.png)
+
+:::
+
+::: {.column style="vertical-align: middle; padding-left: 5%;" width="45%"}
+
+The first impression from reviewing my resume and cover letter will bring some heads up regarding my personal website. This will be the main interaction that users will have with the website and the oportunity to connect with the main user.
+
+:::
+
+:::::
+
+
+::::: {#layout-container .columns}
+
+::: {.column width="50%" style="vertical-align: middle;"}
+
+![](visitor.png)
+
+:::
+
+::: {.column style="vertical-align: middle; padding-left: 5%;" width="45%"}
+
+The next case is that I contact recruiters directly and offered them my portfolio website intermediately so they can see my work and personal information.
+
+:::
+
+:::::
+
+##  Website Design
+
+::: panel-tabset
+
+### Wireframe
+
+This the whoel process developed by Microsoft One Note.
+
+![](wi.png)
+
+### Mockups
+
+I used AI for developing a cleaning version of the wireframe idea.
+
+![](wireframe.png)
+
+:::
+
+## Interactive Experience
+
+![](1.png)
+![](2.png)
+![](3.png)
+
+##  Results & Takeaways
+
+Although creating a clean version of the website was focused on the desing, the main struggle was to adapt the coding in R with the favorite design.  
+

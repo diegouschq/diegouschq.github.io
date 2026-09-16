@@ -33,7 +33,7 @@ This is a section regarding my personal journey.
 
 This section contains my education, experience, technical skills, and professional background.
 
-## [Linceses & Certificates](certification.qmd)
+## [Credentials](certification.qmd)
 
 From my professional and academical experience, I learned several skills, completed courses, and participated in various programs that support my knowledge and efforts.
 
@@ -41,6 +41,11 @@ From my professional and academical experience, I learned several skills, comple
 
 This section gives an overview of my data analytics, finance, and business intelligence projects.
 
-## [Recommendation Letters](recommendation.qmd)
+## [Recommendations](recommendation.qmd)
 
 This section contains formal letters of recommendation and endorsements from past supervisors and managers.
+
+
+## [Volunteering](volunteering.qmd)
+
+One of my goals in life is to make every year at least one volunteering service. This promise was kept during my professional journey and this sections describes it.
