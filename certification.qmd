@@ -23,7 +23,12 @@ title: "Licenses & Certifications"
 
 ![](certification/ge.png){width="50%"}
 
+
 -   **Bachelor's Degree Economics (In-Progress 2027)**
+
+:::
+
+::: {.callout collapse="true"}
 
 ### Business Intelligence & Analytics
 
@@ -43,6 +48,7 @@ title: "Licenses & Certifications"
 :::
 
 ::: {.callout collapse="true"}
+
 ### Finance
 
 -   **Alteryx for Financial Services**
